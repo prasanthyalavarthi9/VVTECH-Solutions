@@ -1,11 +1,13 @@
 VVTech Solutions modern static website bundle
 
 This version includes:
-- Shorter business-focused content
-- Modern solution slides
-- Premium generated enterprise IT hero image
-- 3D animated logo effect
+- Professional content based on the provided website copy
+- Welcome note on the home page
+- Individual animated slides for services
+- Motion effects across sections
+- Transparent-background VV logo
+- 3D animated logo and matching 3D VVTech Solutions brand text
+- Premium enterprise IT hero image
 - Responsive desktop and mobile layout
-- SEO basics with robots.txt and sitemap.xml
 
-Upload all bundle contents to your hosting public folder, such as public_html or www.
+Upload all files and folders from this bundle to your hosting public folder, such as public_html or www.

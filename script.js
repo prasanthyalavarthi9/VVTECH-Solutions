@@ -13,28 +13,29 @@ nav?.querySelectorAll('a').forEach((link) => {
   });
 });
 
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
-reveals.forEach((el) => observer.observe(el));
 
-const slides = [...document.querySelectorAll('.slide')];
-const dots = [...document.querySelectorAll('.slide-dot')];
-let slideIndex = 0;
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
-function showSlide(index) {
-  slideIndex = index;
-  slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+const serviceTabs = [...document.querySelectorAll('.service-tabs button')];
+const serviceSlides = [...document.querySelectorAll('.service-slide')];
+let serviceIndex = 0;
+
+function showService(index) {
+  serviceIndex = index;
+  serviceTabs.forEach((tab, tabIndex) => tab.classList.toggle('active', tabIndex === index));
+  serviceSlides.forEach((slide, slideIndex) => slide.classList.toggle('active', slideIndex === index));
 }
 
-dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
-if (slides.length) {
-  setInterval(() => showSlide((slideIndex + 1) % slides.length), 5200);
+serviceTabs.forEach((tab, index) => tab.addEventListener('click', () => showService(index)));
+
+if (serviceSlides.length) {
+  setInterval(() => showService((serviceIndex + 1) % serviceSlides.length), 5600);
 }
