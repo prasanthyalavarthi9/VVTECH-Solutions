@@ -102,7 +102,7 @@ h3 { margin: 0 0 10px; font-size: 24px; line-height: 1.15; }
 .industry-grid span:nth-child(4n) { background: linear-gradient(135deg, var(--cyan), var(--green)); }
 .contact { background: #eef5f8; }
 .contact-box { display: grid; grid-template-columns: minmax(0, 1fr) minmax(290px, 420px); gap: 28px; align-items: center; width: 100% !important; margin: 0 auto; padding: clamp(28px, 5vw, 56px); border-radius: 8px; background: #fff; box-shadow: var(--shadow); }
-.contact-card { display: grid; gap: 12px; padding: 24px; color: #fff; border-radius: 8px; background: linear-gradient(135deg, #071321, #172b48); }
+.contact-card { display: grid; gap: 12px; padding: 24px; color: rgba(255,255,255,.86); border-radius: 8px; background: linear-gradient(135deg, #071321, #172b48); }
 .contact-card strong { font-size: 24px; }
 .contact-card span, .contact-card em { color: rgba(255,255,255,.68); font-style: normal; }
 .contact-card a:not(.btn) { padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.86); font-weight: 850; }
