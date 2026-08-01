@@ -1,64 +1,210 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>VVTech Solutions | Enterprise IT Infrastructure &amp; Managed Services</title>
-<meta content="#VVTechSolutions delivers end-to-end enterprise #VVTechSolutionsITsolutions across Data Center Infrastructure, #VVTechSolutionsServers &amp; #VVTechSolutionsStorage, #VVTechSolutionsNetworking, #VVTechSolutionsCloud, #VVTechSolutionsCybersecurity, and #VVTechSolutionsManaged IT Services, enabling organizations to operate securely, efficiently, and with confidence." name="description"/>
-<meta content="#VVTechSolutions | #VVTechSolutionsEnterpriseITInfrastructure &amp; #VVTechSolutionsManagedServices" property="og:title"/>
-<meta content="Secure, reliable, and scalable technology environments for modern organizations." property="og:description"/>
-<meta description="#VVTechSolutions delivers end-to-end enterprise #VVTechSolutionsITsolutions across Data Center Infrastructure, #VVTechSolutionsServers &amp; #VVTechSolutionsStorage, #VVTechSolutionsNetworking, #VVTechSolutionsCloud, #VVTechSolutionsCybersecurity, and #VVTechSolutionsManaged IT Services"/>        
-<meta description="end-to-end enterprise IT solutions, Modern IT Enterprises Solutions"/>
-<meta content="website" property="og:type"/>
-<meta content="https://vvtechsys.com" property="og:url"/>
-<meta content="assets/vvtech-hero-enterprise.png" property="og:image"/>
-<link href="assets/vvtech-mark-transparent.png" rel="icon"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet">
-</link></head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VVTech Solutions | Enterprise IT Solutions & Services</title>
+  <meta name="description" content="VVTech Solutions delivers enterprise IT infrastructure, cybersecurity, cloud, networking, virtualization, backup, disaster recovery, IT consulting, and managed IT services." />
+  <meta name="keywords" content="VVTech Solutions, enterprise IT, IT infrastructure, cybersecurity, cloud migration, managed IT services, network solutions, virtualization, backup disaster recovery" />
+  <meta property="og:title" content="VVTech Solutions | Enterprise IT Solutions & Services" />
+  <meta property="og:description" content="Secure, reliable, and scalable technology environments for modern organizations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vvtechsys.com" />
+  <meta property="og:image" content="assets/vvtech-hero-enterprise.png" />
+  <link rel="icon" href="assets/vvtech-mark-transparent.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+
+ <style>
+ .hero-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, .55), 0 0 35px rgba(0, 194, 204, .28);
+}
+.hero-card {
+    width: 400px;
+    min-height: 350px;
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(8, 18, 35, .60);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .45), 0 0 30px rgba(0, 194, 204, .12);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease;
+}
+.hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(0, 194, 204, .8), rgba(245, 123, 32, .6));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+* {
+    box-sizing: border-box;
+}
+.card-header i {
+    font-size: 26px;
+    color: #f6b727;
+}
+.card-line {
+    width: 70px;
+    height: 4px;
+    margin: 28px 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #00c2cc, #8cc63f);
+}
+* {
+    box-sizing: border-box;
+}
+
+.card-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+.feature:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, .08);
+}
+.feature {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    transition: .3s;
+}
+* {
+    box-sizing: border-box;
+}
+.feature:nth-child(1) i {
+    color: #00c2cc;
+}
+.feature i {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.feature:nth-child(1) i {
+    color: #00c2cc;
+}
+.feature i {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+.feature h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+.fas:before {
+    content: var(--fa);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+.feature:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, .08);
+}
+.feature {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    transition: .3s;
+}
+
+.feature:nth-child(2) i {
+    color: #8cc63f;
+}
+.feature i {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+.feature:hover i {
+    filter: drop-shadow(0 0 10px currentColor);
+}
+.feature:nth-child(3) i {
+    color: #f57b20;
+}
+.feature i {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+ </style>
+</head>
 <body>
-<header class="site-header" id="top">
-<a aria-label="VVTech Solutions home" class="brand" href="#top">
-<span aria-hidden="true" class="logo-stage">
-<img alt="" src="assets/vvtech-mark-transparent.png"/>
-<i></i><i></i><i></i>
-</span>
-<span aria-hidden="true" class="brand-title">VVTech Solutions</span>
-<span class="sr-only">VVTech Solutions</span>
-</a>
-<button aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation" class="nav-toggle" type="button">
-<span></span><span></span><span></span>
-</button>
-<nav aria-label="Primary navigation" class="site-nav" id="site-nav">
-<a href="#welcome">Welcome</a>
-<a href="#services">Services</a>
-<a href="#approach">Approach</a>
-<a href="#industries">Industries</a>
-<a class="nav-cta" href="#contact">Contact</a>
-</nav>
-</header>
-<main>
-<section class="hero">
-<div aria-hidden="true" class="hero-image"></div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content reveal">
-<p class="eyebrow">Enterprise IT Infrastructure &amp; Managed Services</p>
-<h1>Building Secure, Intelligent IT for Modern Enterprises.</h1>
-<p>VVTech Solutions delivers end-to-end enterprise IT solutions across Data Center Infrastructure, Servers &amp; Storage, Networking, Cloud, Cybersecurity, and Managed IT Services, enabling organizations to operate securely, efficiently, and with confidence.</p>
-<div class="hero-actions">
-<a class="btn primary" href="#contact">Plan a Consultation</a>
-<a class="btn ghost" href="#services">Explore Services</a>
-</div>
-</div>
-<aside class="hero-card reveal">
+  <div class="site-noise" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="VVTech Solutions home">
+      <span class="logo-stage" aria-hidden="true">
+        <img src="assets/vvtech-mark-transparent.png" alt="" />
+        <i></i><i></i><i></i>
+      </span>
+      <span class="brand-title" aria-hidden="true">VVTech Solutions</span>
+      <span class="sr-only">VVTech Solutions</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="#welcome">Welcome</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#technology">Technology</a>
+      <a class="nav-cta" href="#contact">Consultation</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" data-parallax>
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-ribbon"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Enterprise IT Solutions & Services</p>
+        <h1>Enterprise IT Solutions Powered by Experienced Technology Professionals</h1>
+        <p>VVTech Solutions is a technology startup founded by enterprise IT professionals with extensive experience in designing, implementing, securing, and managing mission-critical IT infrastructure. We deliver reliable, scalable, and secure technology solutions that help businesses accelerate growth and embrace digital transformation.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Schedule a Free Consultation</a>
+          <a class="btn ghost" href="#services">Explore Our Services</a>
+        </div>
+        <div class="hero-badges" aria-label="Core VVTech capabilities">
+          <span>Enterprise Infrastructure</span>
+          <span>Cloud & DevOps</span>
+          <span>Cybersecurity</span>
+          <span>Managed IT Services</span>
+          <span>Managed IT Services</span>
+        </div>
+      </div>
+
+<aside class="hero-card reveal visible">
 <div class="card-header">
 <i class="fas fa-users"></i>
 <span>RELIABLE TECHNOLOGY</span>
 </div>
 <h3>
         Trusted Partnership.
-        <br/>
+        <br>
         Lasting Value.
     </h3>
 <div class="card-line"></div>
@@ -80,199 +226,208 @@
 </div>
 </div>
 </aside>
-</section>
-<section class="welcome" id="welcome">
-<div class="welcome-copy reveal">
-<p class="eyebrow">Welcome to VVTech Solutions</p>
-<h2>Your trusted enterprise technology partner.</h2>
-<p>Technology should empower your organization, not create complexity. We work with businesses to understand operational needs, recommend practical solutions, and support IT environments as they grow.</p>
-</div>
-<div aria-label="Technology capability map" class="welcome-orbit reveal">
-<span class="core">VVTech</span>
-<span>Cloud</span>
-<span>Security</span>
-<span>Network</span>
-<span>Backup</span>
-</div>
-</section>
-<section aria-label="Technology expertise" class="tech-strip">
-<span>Enterprise Networking</span><span>Data Center</span><span>Microsoft 365</span><span>Cloud Platforms</span><span>Endpoint Protection</span><span>Backup &amp; DR</span><span>Infrastructure Monitoring</span><span>Hybrid IT</span>
-</section>
-<section class="services-section" id="services">
-<div class="section-head reveal">
-<p class="eyebrow">Our Services</p>
-<h2>Individual service slides with clear enterprise focus.</h2>
-<p>Use the controls to view each solution area. The content is concise, professional, and relevant to enterprise IT operations.</p>
-</div>
-<div class="service-slider reveal" data-service-slider="">
-<div aria-label="Service slides" class="service-tabs" role="tablist">
-<button class="active" type="button">Infrastructure</button>
-<button type="button">Networking</button>
-<button type="button">Cybersecurity</button>
-<button type="button">Cloud</button>
-<button type="button">Virtualization</button>
-<button type="button">Data Protection</button>
-<button type="button">Managed Services</button>
-<button type="button">IT Consulting</button>
-</div>
-<div class="service-slides">
-<article class="service-slide active">
 
-<h3>Enterprise Infrastructure</h3>
-<p>Build a resilient, scalable, and high-performance IT foundation with enterprise-grade infrastructure solutions.</p>
-<ul>
-<li>Data Center Infrastructure</li>
-<li>Enterprise Servers &amp; Storage</li>
-<li>Hyper-Converged Infrastructure (HCI)</li>
-<li>Rack &amp; Power Solutions</li>
-<li>Infrastructure Modernization</li>
-<li>High Availability Architecture</li>
-</ul>
-</article>
-<article class="service-slide">
+      <aside class="hero-command reveal" aria-label="VVTech service promise">
+        <div class="command-top"><span></span><span></span><span></span></div>
+        <p>Reliable Technology</p>
+        <h2>Trusted Partnership. Lasting Value.</h2>
+        <div class="command-grid">
+          <span>Secure</span><span>Scalable</span><span>Future-Ready</span>
+        </div>
+        <div class="command-meter"><i></i></div>
+      </aside>
+    </section>
 
-<h3>Networking &amp; Connectivity</h3>
-<p>Deliver secure, intelligent and high-performance enterprise networking.</p>
-<ul>
-<li>Campus &amp; Branch Networking</li>
-<li>SD-WAN Solutions</li>
-<li>Wireless LAN (Wi-Fi 6 / Wi-Fi 7)</li>
-<li>Core &amp; Data Center Switching</li>
-<li>Network Access Control (NAC)</li>
-<li>VPN &amp; Secure Remote Access</li>
-</ul>
-</article>
-<article class="service-slide">
+    <section id="welcome" class="welcome">
+      <div class="section-head reveal">
+        <p class="eyebrow">Welcome to VVTech Solutions</p>
+        <h2>Building resilient, secure and scalable IT environments for modern organizations.</h2>
+        <p>Technology should enable business growth, not create complexity. We combine proven enterprise experience, practical consulting, careful implementation, and responsive support to help organizations operate with confidence.</p>
+      </div>
+      <div class="welcome-layout">
+        <div class="welcome-slider reveal" data-welcome-slider>
+          <article class="welcome-slide active">
+            <span>01 / Discover</span>
+            <h3>Understand your infrastructure, security, and business priorities.</h3>
+            <p>We begin with business objectives, existing systems, users, risk areas, and operational requirements.</p>
+          </article>
+          <article class="welcome-slide">
+            <span>02 / Design</span>
+            <h3>Create a secure architecture built for today and ready for growth.</h3>
+            <p>Our recommendations stay vendor-neutral, practical, and aligned to your budget and continuity needs.</p>
+          </article>
+          <article class="welcome-slide">
+            <span>03 / Support</span>
+            <h3>Keep systems monitored, optimized, and supported after deployment.</h3>
+            <p>We provide ongoing maintenance, remote support, performance review, and improvement planning.</p>
+          </article>
+          <div class="welcome-controls">
+            <button class="welcome-dot active" type="button" aria-label="Show welcome slide 1"></button>
+            <button class="welcome-dot" type="button" aria-label="Show welcome slide 2"></button>
+            <button class="welcome-dot" type="button" aria-label="Show welcome slide 3"></button>
+          </div>
+        </div>
+        <div class="infra-map reveal" aria-label="Animated infrastructure diagram">
+          <span class="map-core">VV</span>
+          <span class="map-node n1">Cloud</span>
+          <span class="map-node n2">Security</span>
+          <span class="map-node n3">Network</span>
+          <span class="map-node n4">Backup</span>
+          <span class="map-line l1"></span>
+          <span class="map-line l2"></span>
+          <span class="map-line l3"></span>
+          <span class="map-line l4"></span>
+        </div>
+      </div>
+    </section>
 
-<h3>Cybersecurity</h3>
-<p>Protect critical infrastructure with multi-layered enterprise security.</p>
-<ul>
-<li>Next-Generation Firewalls</li>
-<li>Endpoint Detection &amp; Response (EDR/XDR)</li>
-<li>SIEM &amp; SOC Integration</li>
-<li>Vulnerability Assessment &amp; Penetration Testing</li>
-<li>Email Security</li>
-<li>Zero Trust Security</li>
-</ul>
-</article>
-<article class="service-slide">
+    <section id="about" class="about-section">
+      <div class="section-head reveal">
+        <p class="eyebrow">About VVTech Solutions</p>
+        <h2>A modern IT solutions company built on enterprise experience.</h2>
+      </div>
+      <div class="about-grid">
+        <article class="about-story reveal">
+          <p>VVTech Solutions is a modern IT solutions company established with a vision to deliver enterprise-grade technology services to businesses of all sizes. Although we are a newly established organization, our strength lies in the extensive enterprise experience of our technical team.</p>
+          <p>Our professionals have successfully designed, implemented, and managed complex IT environments, including datacenters, cloud platforms, virtualization infrastructure, enterprise networking, cybersecurity, and managed IT operations.</p>
+          <p>We combine industry best practices, proven technologies, and customer-focused service to deliver secure, scalable, and future-ready IT solutions that align with business objectives.</p>
+        </article>
+        <aside class="about-proof reveal" aria-label="VVTech enterprise focus">
+          <span>Startup Agility</span>
+          <strong>Enterprise Delivery Mindset</strong>
+          <div><em>Datacenter</em><em>Cloud</em><em>Security</em><em>Networking</em><em>Managed IT</em></div>
+        </aside>
+      </div>
+    </section>
 
-<h3>Cloud &amp; Hybrid Infrastructure</h3>
-<p>Accelerate digital transformation through secure cloud and hybrid platforms.</p>
-<ul>
-<li>Microsoft Azure</li>
-<li>AWS</li>
-<li>Google Cloud Platform</li>
-<li>Microsoft 365</li>
-<li>Hybrid Cloud</li>
-<li>Cloud Backup &amp; Disaster Recovery</li>
-</ul>
-</article>
-<article class="service-slide">
+    <section id="services" class="services-section">
+      <div class="section-head reveal">
+        <p class="eyebrow">Enterprise Services</p>
+        <h2>Services designed for secure, reliable operations.</h2>
+        <p>Each service area is structured around real enterprise needs: uptime, security, visibility, scalability, and long-term support.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <span class="service-icon">IT</span>
+          <h3>Infrastructure</h3>
+          <p>Modern enterprise infrastructure solutions for reliable business operations.</p>
+          <ul><li>Servers</li><li>Storage</li><li>Backup</li><li>Data Center</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon">NW</span>
+          <h3>Networking</h3>
+          <p>Secure, high-performance connectivity across offices, branches, and cloud platforms.</p>
+          <ul><li>LAN/WAN</li><li>SD-WAN</li><li>Wi-Fi</li><li>VPN</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon">CY</span>
+          <h3>Cybersecurity</h3>
+          <p>Layered security controls that protect users, networks, endpoints, and data.</p>
+          <ul><li>NGFW</li><li>Endpoint</li><li>Email Security</li><li>Audits</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon">CL</span>
+          <h3>Cloud Solutions</h3>
+          <p>Cloud migration, Microsoft 365, backup, identity, and hybrid deployment support.</p>
+          <ul><li>M365</li><li>Migration</li><li>Hybrid Cloud</li><li>IAM</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon">VM</span>
+          <h3>Virtualization</h3>
+          <p>Platform optimization with VMware, Hyper-V, KVM, and high availability planning.</p>
+          <ul><li>VMware</li><li>Hyper-V</li><li>KVM</li><li>HA</li></ul>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-icon">MS</span>
+          <h3>Managed IT</h3>
+          <p>Monitoring, maintenance, helpdesk, AMC, remote support, and performance reporting.</p>
+          <ul><li>Monitoring</li><li>Support</li><li>AMC</li><li>Reports</li></ul>
+        </article>
+      </div>
+    </section>
 
-<h3>Virtualization &amp; Modern Platforms</h3>
-<ul>
-<li>VMware</li>
-<li>Microsoft Hyper-V</li>
-<li>Proxmox VE</li>
-<li>XCP-ng</li>
-<li>Kubernetes</li>
-<li>Docker Containers</li>
-</ul>
-</article>
-<article class="service-slide">
+    <section id="why" class="why-section">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why Choose VVTech Solutions</p>
+        <h2>Professional capabilities designed for long-term technology value.</h2>
+      </div>
+      <div class="why-card-grid">
+        <article class="why-card reveal"><span>01</span><h3>Enterprise Expertise</h3><p>Our engineers bring years of practical experience managing enterprise-scale IT infrastructure across diverse industries.</p></article>
+        <article class="why-card reveal"><span>02</span><h3>Customer-Centric Approach</h3><p>We understand every business has unique requirements and deliver customized technology solutions that create measurable value.</p></article>
+        <article class="why-card reveal"><span>03</span><h3>Security-First Design</h3><p>Security is integrated into every solution, supporting business continuity, compliance, and protection against evolving cyber threats.</p></article>
+        <article class="why-card reveal"><span>04</span><h3>Scalable Architecture</h3><p>Our solutions are designed to grow with your business while maintaining performance, reliability, and operational efficiency.</p></article>
+        <article class="why-card reveal"><span>05</span><h3>Modern Technologies</h3><p>We leverage cloud computing, virtualization, DevOps, automation, AI-driven operations, and next-generation cybersecurity solutions.</p></article>
+        <article class="why-card reveal"><span>06</span><h3>Reliable Support</h3><p>Our commitment extends beyond implementation through proactive monitoring, preventive maintenance, and responsive technical support.</p></article>
+      </div>
+    </section>
 
-<h3>Data Protection &amp; Business Continuity</h3>
-<ul>
-<li>Backup Solutions</li>
-<li>Disaster Recovery</li>
-<li>Replication</li>
-<li>Immutable Backup</li>
-<li>NAS &amp; SAN Storage</li>
-<li>Business Continuity Planning</li>
-</ul>
-</article>
-<article class="service-slide">
+    <section id="technology" class="technology">
+      <div class="section-head reveal">
+        <p class="eyebrow">Technology Expertise</p>
+        <h2>Enterprise technologies we work with.</h2>
+      </div>
+      <div class="tech-marquee reveal" aria-label="Technology stack carousel">
+        <div class="tech-track">
+          <span>Microsoft</span><span>Cisco</span><span>Dell</span><span>Fortinet</span><span>VMware</span><span>Azure</span><span>AWS</span><span>HPE</span><span>Lenovo</span><span>QNAP</span><span>Docker</span>
+          <span>Microsoft</span><span>Cisco</span><span>Dell</span><span>Fortinet</span><span>VMware</span><span>Azure</span><span>AWS</span><span>HPE</span><span>Lenovo</span><span>QNAP</span><span>Docker</span>
+        </div>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-card reveal"><strong data-counter="15">0</strong><span>Years Enterprise IT Experience</span></article>
+        <article class="proof-card reveal"><strong data-counter="6">0</strong><span>Core Solution Practices</span></article>
+        <article class="proof-card reveal"><strong>24x7</strong><span>Monitoring & Support Capability</span></article>
+        <article class="proof-card reveal"><strong>India</strong><span>Serving Businesses Across India</span></article>
+      </div>
+    </section>
 
-<h3>Managed IT Services</h3>
-<ul>
-<li>24×7 Infrastructure Monitoring</li>
-<li>Network Operations Center (NOC)</li>
-<li>IT Helpdesk</li>
-<li>Patch Management</li>
-<li>Preventive Maintenance</li>
-<li>Asset Lifecycle Management</li>
-</ul>
-</article>
-<article class="service-slide">
+    <section id="industries" class="industries">
+      <div class="section-head reveal">
+        <p class="eyebrow">Industries We Support</p>
+        <h2>Technology services for teams where reliability matters.</h2>
+      </div>
+      <div class="industry-grid">
+        <article class="industry-card reveal"><span>MF</span><h3>Manufacturing</h3><p>Stable networks, plant systems, backup, and operational continuity.</p></article>
+        <article class="industry-card reveal"><span>HC</span><h3>Healthcare</h3><p>Secure infrastructure, endpoint protection, and reliable access.</p></article>
+        <article class="industry-card reveal"><span>FS</span><h3>Financial Services</h3><p>Security-first systems, monitoring, VPN, and continuity planning.</p></article>
+        <article class="industry-card reveal"><span>ED</span><h3>Education</h3><p>Wi-Fi, Microsoft 365, endpoint security, and managed support.</p></article>
+        <article class="industry-card reveal"><span>SM</span><h3>SMB & Enterprise</h3><p>Right-sized IT planning, deployment, operations, and support.</p></article>
+      </div>
+    </section>
 
-<h3>IT Consulting &amp; Digital Transformation</h3>
-<ul>
-<li>IT Infrastructure Assessment</li>
-<li>Technology Roadmaps</li>
-<li>Cloud Readiness</li>
-<li>Security Compliance</li>
-<li>IT Audits</li>
-<li>Solution Architecture</li>
-</ul>
-</article>
-</div></div>
+    <section id="contact" class="contact">
+      <div class="contact-box reveal">
+        <div>
+          <h3>Grow your business with the right IT solutions.</h3>
+          <p>Talk to VVTech Solutions about your business needs and IT challenges. Our experts will help you choose secure, reliable, and cost-effective 
+          solutions that keep your business running smoothly and ready for the future.</p>
+          <h2>Let’s build a smarter IT environment.</h2>
+        </div>
+        <div class="contact-card">
+          <strong>VVTech Solutions</strong>
+          <span>Enterprise IT Solutions & Services</span>
+          <a href="https://www.vvtechsys.com">www.vvtechsys.com</a>
+          <a href="mailto:info@vvtechsys.com">info@vvtechsys.com</a>
+		  <a href="+91-76608 45999">Contact: +91-76608 45999</a>
+          <a class="btn primary" href="mailto:info@vvtechsys.com?subject=IT%20Consultation%20Request">Email VVTech</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</section>
-<section class="approach" id="approach">
-<div class="section-head reveal">
-<p class="eyebrow">Our Approach</p>
-<h2>Structured delivery that reduces risk and improves value.</h2>
-</div>
-<div class="approach-grid">
-<article class="reveal"><strong>Discover</strong><p>Understand business objectives, existing infrastructure, and operational requirements.</p></article>
-<article class="reveal"><strong>Design</strong><p>Create secure, scalable solutions tailored to current and future needs.</p></article>
-<article class="reveal"><strong>Deploy</strong><p>Implement with best practices while minimizing operational disruption.</p></article>
-<article class="reveal"><strong>Support</strong><p>Provide monitoring, maintenance, optimization, and technical support.</p></article>
-</div>
-</section>
-<section class="why">
-<div class="why-copy reveal">
-<p class="eyebrow">Why Choose VVTech Solutions?</p>
-<h2>Professional, practical, and support-focused.</h2>
-</div>
-<div class="why-grid reveal">
-<span>Experienced enterprise IT professionals</span><span>Business-focused solutions</span><span>Vendor-neutral consulting</span><span>Responsive technical support</span><span>Secure implementations</span><span>Long-term partnerships</span>
-</div>
-</section>
-<section class="industries" id="industries">
-<div class="section-head reveal">
-<p class="eyebrow">Industries We Support</p>
-<h2>Tailored IT services for operational and compliance needs.</h2>
-</div>
-<div class="industry-grid reveal">
-<span>Manufacturing</span><span>Engineering</span><span>Information Technology</span><span>Healthcare</span><span>Education</span><span>Retail</span><span>Logistics</span><span>Financial Services</span><span>Hospitality</span><span>Government</span>
-</div>
-</section>
-<section class="contact" id="contact">
-<div class="contact-box reveal">
-<div>
-<p class="eyebrow">Contact Us</p>
-<h2>Let’s build a smarter IT environment.</h2>
-<h3>Ready to improve your IT infrastructure, Network, Security, or Cloud readiness?</h3>
-<h4>Talk with VVTech Solutions about your technology goals, current challenges, and the next step toward a secure, scalable IT environment.</h4>
-<h4>Our experts help you choose the right solutions for a secure, efficient, and future-ready IT infrastructure.</h4>
-</div>
-<div class="contact-card">
-<strong>VVTech Solutions</strong>
-<span>Enterprise IT Solutions &amp; Services</span>
-<a href="https://www.vvtechsys.com">www.vvtechsys.com</a>
-<a href="mailto:info@vvtechsys.com">info@vvtechsys.com</a>
-<b>Contact:+91-76608 45999</b>        
-<a class="btn primary" href="mailto:info@vvtechsys.com?subject=IT%20Consultation%20Request">Email VVTech</a>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div><strong>VVTech Solutions</strong><span>Serving Businesses Across India</span></div>
-<a href="#top">Back to top</a>
-</footer>
-<script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <strong>VVTech Solutions</strong>
+      <span>Reliable Technology. Trusted Partnership. Lasting Value.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#technology">Technology</a>
+      <a href="#industries">Industries</a>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="script-required.js"></script>
 </body>
 </html>
