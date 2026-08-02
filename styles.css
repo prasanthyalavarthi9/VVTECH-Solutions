@@ -194,6 +194,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 730; }
 .n2 { right: 10%; top: 22%; }
 .n3 { left: 14%; bottom: 18%; }
 .n4 { right: 13%; bottom: 18%; }
+.n5 { right: 13%; bottom: 18%; }
 .map-line { position: absolute; z-index: 1; left: 50%; top: 50%; width: 32%; height: 2px; transform-origin: 0 0; background: linear-gradient(90deg, rgba(0,194,204,.55), transparent); }
 .l1 { transform: rotate(218deg); }
 .l2 { transform: rotate(318deg); }
