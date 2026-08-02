@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://vvtechsys.com" />
   <meta property="og:image" content="assets/vvtech-hero-enterprise.png" />
   <link rel="icon" href="assets/vvtech-mark-transparent.png" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 
  <style>
@@ -267,20 +267,95 @@
             <button class="welcome-dot" type="button" aria-label="Show welcome slide 3"></button>
           </div>
         </div>
-        <div class="infra-map reveal" aria-label="Animated infrastructure diagram">
-          <span class="map-core">VV-Tech</span>
-          <span class="map-node n1">Any-IT Infrastructure</span>
-          <span class="map-node n2">Security</span>
-          <span class="map-node n3">Network</span>
-          <span class="map-node n4">Data-Center</span>
-          <span class="map-node n5">Support</span>
-          <span class="map-node n6">Service</span>
-		  <span class="map-line l1"></span>
-          <span class="map-line l2"></span>
-          <span class="map-line l3"></span>
-          <span class="map-line l4"></span>
-          <span class="map-line l5"></span>
-          <span class="map-line l6"></span>
+        <div class="infra-map solution-wheel reveal" aria-label="360 degree end-to-end IT solutions diagram">
+          <div class="wheel-orbits" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="orbit orbit-three"></span>
+          </div>
+          <span class="wheel-line wl-top"></span>
+          <span class="wheel-line wl-right-top"></span>
+          <span class="wheel-line wl-right-bottom"></span>
+          <span class="wheel-line wl-bottom"></span>
+          <span class="wheel-line wl-left-bottom"></span>
+          <span class="wheel-line wl-left-top"></span>
+
+          <div class="wheel-core">VV-Tech</div>
+
+          <article class="wheel-card wheel-top">
+            <span class="wheel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <rect x="13" y="10" width="38" height="12" rx="2"></rect>
+                <rect x="13" y="26" width="38" height="12" rx="2"></rect>
+                <rect x="13" y="42" width="38" height="12" rx="2"></rect>
+                <circle cx="22" cy="16" r="2"></circle>
+                <circle cx="22" cy="32" r="2"></circle>
+                <circle cx="22" cy="48" r="2"></circle>
+                <path d="M31 16h12M31 32h12M31 48h12"></path>
+              </svg>
+            </span>
+            <strong>Any-IT Infrastructure</strong>
+          </article>
+          <article class="wheel-card wheel-right-top">
+            <span class="wheel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M32 7l22 8v14c0 14-8.6 24.8-22 30-13.4-5.2-22-16-22-30V15l22-8z"></path>
+                <path d="M32 14v37M20 23l12-5 12 5v8c0 8-4.4 14.7-12 18.6"></path>
+              </svg>
+            </span>
+            <strong>Security</strong>
+          </article>
+          <article class="wheel-card wheel-right-bottom">
+            <span class="wheel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <circle cx="32" cy="13" r="7"></circle>
+                <circle cx="14" cy="48" r="7"></circle>
+                <circle cx="50" cy="48" r="7"></circle>
+                <path d="M29 19L17 42M35 19l12 23M21 48h22"></path>
+                <circle cx="32" cy="32" r="4"></circle>
+              </svg>
+            </span>
+            <strong>Network</strong>
+          </article>
+          <article class="wheel-card wheel-bottom">
+            <span class="wheel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M13 55V18c0-3 2-5 5-5h18v42"></path>
+                <path d="M36 25h12c3 0 5 2 5 5v25"></path>
+                <path d="M21 22h7M21 31h7M21 40h7M43 34h4M43 43h4M10 55h46"></path>
+              </svg>
+            </span>
+            <strong>Data-Centers</strong>
+          </article>
+          <article class="wheel-card wheel-left-bottom">
+            <span class="wheel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M14 36v-5c0-10 8-18 18-18s18 8 18 18v5"></path>
+                <rect x="9" y="33" width="11" height="16" rx="4"></rect>
+                <rect x="44" y="33" width="11" height="16" rx="4"></rect>
+                <path d="M50 49c-2 7-8 10-17 10h-5"></path>
+                <path d="M27 59h7"></path>
+              </svg>
+            </span>
+            <strong>Support</strong>
+          </article>
+          <article class="wheel-card wheel-left-top">
+            <span class="wheel-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <circle cx="25" cy="23" r="9"></circle>
+                <circle cx="42" cy="25" r="7"></circle>
+                <path d="M9 52c2-11 9-17 18-17s16 6 18 17"></path>
+                <path d="M39 36c8 1 13 6 16 16"></path>
+              </svg>
+            </span>
+            <strong>Services</strong>
+          </article>
+
+          <div class="wheel-caption" aria-hidden="true">
+            <span></span>
+            <strong>360&deg; End-to-End IT Solutions</strong>
+            <span></span>
+          </div>
         </div>
       </div>
     </section>
@@ -310,43 +385,87 @@
         <h2>Services designed for secure, reliable operations.</h2>
         <p>Each service area is structured around real enterprise needs: uptime, security, visibility, scalability, and long-term support.</p>
       </div>
-      <div class="service-grid">
-        <article class="service-card reveal">
-          <span class="service-icon">IT</span>
-          <h3>Infrastructure</h3>
-          <p>Modern enterprise infrastructure solutions for reliable business operations.</p>
-          <ul><li>Servers</li><li>Storage</li><li>Backup</li><li>Data Center</li></ul>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon">NW</span>
-          <h3>Networking</h3>
-          <p>Secure, high-performance connectivity across offices, branches, and cloud platforms.</p>
-          <ul><li>LAN/WAN</li><li>SD-WAN</li><li>Wi-Fi</li><li>VPN</li></ul>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon">CY</span>
-          <h3>Cybersecurity</h3>
-          <p>Layered security controls that protect users, networks, endpoints, and data.</p>
-          <ul><li>NGFW</li><li>Endpoint</li><li>Email Security</li><li>Audits</li></ul>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon">CL</span>
-          <h3>Cloud Solutions</h3>
-          <p>Cloud migration, Microsoft 365, backup, identity, and hybrid deployment support.</p>
-          <ul><li>M365</li><li>Migration</li><li>Hybrid Cloud</li><li>IAM</li></ul>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon">VM</span>
-          <h3>Virtualization</h3>
-          <p>Platform optimization with VMware, Hyper-V, KVM, and high availability planning.</p>
-          <ul><li>VMware</li><li>Hyper-V</li><li>KVM</li><li>HA</li></ul>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon">MS</span>
-          <h3>Managed IT</h3>
-          <p>Monitoring, maintenance, helpdesk, AMC, remote support, and performance reporting.</p>
-          <ul><li>Monitoring</li><li>Support</li><li>AMC</li><li>Reports</li></ul>
-        </article>
+      <div class="service-showcase reveal" data-service-showcase>
+        <div class="service-orbit" aria-hidden="true"></div>
+        <div class="service-tabs" role="tablist" aria-label="Enterprise service categories">
+          <button class="service-tab active" type="button" data-service-tab="0"><span class="service-tab-icon icon-infra" aria-hidden="true"></span>Infrastructure</button>
+          <button class="service-tab" type="button" data-service-tab="1"><span class="service-tab-icon icon-network" aria-hidden="true"></span>Networking</button>
+          <button class="service-tab" type="button" data-service-tab="2"><span class="service-tab-icon icon-security" aria-hidden="true"></span>Cybersecurity</button>
+          <button class="service-tab" type="button" data-service-tab="3"><span class="service-tab-icon icon-cloud" aria-hidden="true"></span>Cloud Solutions</button>
+          <button class="service-tab" type="button" data-service-tab="4"><span class="service-tab-icon icon-virtual" aria-hidden="true"></span>Virtualization</button>
+          <button class="service-tab" type="button" data-service-tab="5"><span class="service-tab-icon icon-managed" aria-hidden="true"></span>Managed IT</button>
+          <button class="service-tab" type="button" data-service-tab="6"><span class="service-tab-icon icon-backup" aria-hidden="true"></span>Backup & DR</button>
+          <button class="service-tab" type="button" data-service-tab="7"><span class="service-tab-icon icon-consult" aria-hidden="true"></span>Consulting</button>
+        </div>
+
+        <div class="service-stage">
+          <article class="service-panel active" data-service-panel="0">
+            <div class="service-panel-head">
+              <span class="service-mark">IT</span>
+              <div><p>Core Practice</p><h3>Infrastructure</h3></div>
+            </div>
+            <p>Modern enterprise infrastructure designed for uptime, performance, scalability, and secure daily operations.</p>
+            <ul><li>Server Solutions</li><li>Enterprise Storage</li><li>Data Center Buildout</li><li>Rack & Power Planning</li><li>Endpoint Infrastructure</li><li>Hardware Refresh</li><li>Capacity Planning</li><li>Infrastructure Health Checks</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="1">
+            <div class="service-panel-head">
+              <span class="service-mark">NW</span>
+              <div><p>Connectivity</p><h3>Networking</h3></div>
+            </div>
+            <p>Secure, high-performance network architecture across offices, branches, data centers, and cloud platforms.</p>
+            <ul><li>LAN/WAN Design</li><li>SD-WAN</li><li>Enterprise Wi-Fi</li><li>VPN Access</li><li>Routing & Switching</li><li>Network Monitoring</li><li>Firewall Integration</li><li>Branch Connectivity</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="2">
+            <div class="service-panel-head">
+              <span class="service-mark">CY</span>
+              <div><p>Protection</p><h3>Cybersecurity</h3></div>
+            </div>
+            <p>Layered security controls that protect users, networks, endpoints, identities, data, and business continuity.</p>
+            <ul><li>NGFW Deployment</li><li>Endpoint Security</li><li>Email Security</li><li>Security Audits</li><li>Vulnerability Review</li><li>Identity Protection</li><li>Zero Trust Planning</li><li>Incident Response</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="3">
+            <div class="service-panel-head">
+              <span class="service-mark">CL</span>
+              <div><p>Modern Platforms</p><h3>Cloud Solutions</h3></div>
+            </div>
+            <p>Cloud migration, Microsoft 365, identity, backup, and hybrid deployment support for growing teams.</p>
+            <ul><li>Microsoft 365</li><li>Azure Services</li><li>AWS Planning</li><li>Cloud Migration</li><li>Hybrid Cloud</li><li>Cloud Backup</li><li>Identity & Access</li><li>Cost Optimization</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="4">
+            <div class="service-panel-head">
+              <span class="service-mark">VM</span>
+              <div><p>Platform Efficiency</p><h3>Virtualization</h3></div>
+            </div>
+            <p>Optimized virtualization platforms with high availability, resource planning, and simplified operations.</p>
+            <ul><li>VMware</li><li>Hyper-V</li><li>KVM</li><li>Cluster Design</li><li>High Availability</li><li>VM Migration</li><li>Resource Tuning</li><li>Virtual Backup</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="5">
+            <div class="service-panel-head">
+              <span class="service-mark">MS</span>
+              <div><p>Operations</p><h3>Managed IT</h3></div>
+            </div>
+            <p>Reliable monitoring, maintenance, helpdesk, AMC, remote support, and performance reporting.</p>
+            <ul><li>24x7 Monitoring</li><li>Remote Support</li><li>AMC Services</li><li>Patch Management</li><li>Helpdesk</li><li>Asset Tracking</li><li>Performance Reports</li><li>Preventive Maintenance</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="6">
+            <div class="service-panel-head">
+              <span class="service-mark">DR</span>
+              <div><p>Resilience</p><h3>Backup & Disaster Recovery</h3></div>
+            </div>
+            <p>Backup and recovery strategies that reduce downtime, protect business data, and improve readiness.</p>
+            <ul><li>Backup Strategy</li><li>Disaster Recovery</li><li>RPO/RTO Planning</li><li>Cloud Backup</li><li>Immutable Backup</li><li>Recovery Testing</li><li>Replication</li><li>Continuity Planning</li></ul>
+          </article>
+          <article class="service-panel" data-service-panel="7">
+            <div class="service-panel-head">
+              <span class="service-mark">CS</span>
+              <div><p>Advisory</p><h3>IT Consulting</h3></div>
+            </div>
+            <p>Practical consulting that aligns technology investments with security, growth, budget, and operations.</p>
+            <ul><li>IT Assessment</li><li>Roadmap Planning</li><li>Architecture Review</li><li>Vendor Selection</li><li>Project Planning</li><li>Compliance Readiness</li><li>Documentation</li><li>Technology Strategy</li></ul>
+          </article>
+        </div>
+
+        <div class="service-progress" aria-hidden="true"><span></span></div>
       </div>
     </section>
 
@@ -378,7 +497,7 @@
       </div>
       <div class="proof-grid">
         <article class="proof-card reveal"><strong data-counter="15">0</strong><span>Years Enterprise IT Experience</span></article>
-        <article class="proof-card reveal"><strong data-counter="20">0</strong><span>Core Solution Practices</span></article>
+        <article class="proof-card reveal"><strong data-counter="6">0</strong><span>Core Solution Practices</span></article>
         <article class="proof-card reveal"><strong>24x7</strong><span>Monitoring & Support Capability</span></article>
         <article class="proof-card reveal"><strong>India</strong><span>Serving Businesses Across India</span></article>
       </div>

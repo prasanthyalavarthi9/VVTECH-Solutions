@@ -43,6 +43,55 @@ function setupSlider(slidesSelector, dotsSelector, activeClass, delay) {
 
 setupSlider('.welcome-slide', '.welcome-dot', 'active', 5000);
 
+const serviceShowcase = document.querySelector('[data-service-showcase]');
+if (serviceShowcase) {
+  const tabs = [...serviceShowcase.querySelectorAll('[data-service-tab]')];
+  const panels = [...serviceShowcase.querySelectorAll('[data-service-panel]')];
+  const progress = serviceShowcase.querySelector('.service-progress span');
+  let serviceIndex = 0;
+  let serviceTimer;
+
+  function restartServiceProgress() {
+    if (!progress) return;
+    progress.style.animation = 'none';
+    progress.offsetHeight;
+    progress.style.animation = '';
+  }
+
+  function showService(nextIndex) {
+    serviceIndex = (nextIndex + panels.length) % panels.length;
+    tabs.forEach((tab, index) => tab.classList.toggle('active', index === serviceIndex));
+    panels.forEach((panel, index) => panel.classList.toggle('active', index === serviceIndex));
+    restartServiceProgress();
+  }
+
+  function startServiceShuffle() {
+    clearInterval(serviceTimer);
+    serviceShowcase.classList.remove('is-paused');
+    restartServiceProgress();
+    serviceTimer = setInterval(() => showService(serviceIndex + 1), 5000);
+  }
+
+  function pauseServiceShuffle() {
+    clearInterval(serviceTimer);
+    serviceShowcase.classList.add('is-paused');
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      showService(index);
+      startServiceShuffle();
+    });
+  });
+
+  serviceShowcase.addEventListener('mouseenter', pauseServiceShuffle);
+  serviceShowcase.addEventListener('mouseleave', startServiceShuffle);
+  serviceShowcase.addEventListener('focusin', pauseServiceShuffle);
+  serviceShowcase.addEventListener('focusout', startServiceShuffle);
+
+  startServiceShuffle();
+}
+
 const counted = new WeakSet();
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
