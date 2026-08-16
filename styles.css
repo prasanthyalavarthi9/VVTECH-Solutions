@@ -900,3 +900,55 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 730; }
   .service-card { min-height: 280px; }
   .site-footer { flex-direction: column; align-items: flex-start; }
 }
+
+/* Hero card icons — no Font Awesome dependency */
+.hero-card-inline-icon { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.card-header .hero-card-inline-icon { flex: 0 0 auto; margin: 0; }
+.feature .hero-card-inline-icon { display: block; margin: 0 auto 12px; }
+.hero-card-inline-icon--header { color: #f6b727; }
+.hero-card-inline-icon--shield { color: #00c2cc; }
+.hero-card-inline-icon--growth { color: #8cc63f; }
+.hero-card-inline-icon--support { color: #f57b20; }
+
+.hero-card .card-header > i,
+.hero-card .feature > i {
+  display: inline-block !important;
+  font-family: inherit !important;
+  font-size: 0 !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.hero-card .card-header > i::before,
+.hero-card .feature > i::before {
+  content: none !important;
+}
+
+/* Reliable Technology icon */
+.hero-card .card-header > i {
+  width: 25px;
+  height: 25px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f6b727' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 2.3 4.7 5.2.8-3.8 3.7.9 5.2-4.6-2.4-4.6 2.4.9-5.2-3.8-3.7 5.2-.8L12 3Z'/%3E%3C/svg%3E");
+}
+
+/* Proven Expertise — shield */
+.hero-card .feature:nth-child(1) > i {
+  width: 34px;
+  height: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c2cc' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.5 19 6v5.3c0 4.3-2.8 7.7-7 9.2-4.2-1.5-7-4.9-7-9.2V6l7-2.5Z'/%3E%3Cpath d='m8.7 11.9 2.1 2.1 4.5-4.7'/%3E%3C/svg%3E");
+}
+
+/* Scalable Solutions — growth chart */
+.hero-card .feature:nth-child(2) > i {
+  width: 34px;
+  height: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238cc63f' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5h16M6.5 17v-4M11.5 17V9M16.5 17V5'/%3E%3Cpath d='m5.5 10 5-4 3.2 2.2L20 3.5M16.5 3.5H20V7'/%3E%3C/svg%3E");
+}
+
+/* Dedicated Support — headset */
+.hero-card .feature:nth-child(3) > i {
+  width: 34px;
+  height: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f57b20' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 14v-2a7.5 7.5 0 0 1 15 0v2'/%3E%3Cpath d='M4.5 13h3.2v5H5.5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1ZM19.5 13h-3.2v5h2.2a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1Z'/%3E%3Cpath d='M16.3 18c0 1.4-1.4 2.5-3.2 2.5h-1.4'/%3E%3C/svg%3E");
+}
