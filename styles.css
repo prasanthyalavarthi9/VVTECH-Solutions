@@ -1974,3 +1974,593 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 730; }
   .vv-approach-visual .wheel-core { width: 82px; height: 82px; font-size: 17px; }
   .vv-approach-visual .wheel-caption { font-size: 11px; }
 }
+
+/* =========================================================
+   VVTECH APPROACH - FINAL DESKTOP ALIGNMENT
+   Match the existing site width, spacing and 65/35 composition.
+   The right 360° animation aligns with the methodology panel,
+   rather than stretching to the viewport height.
+   ========================================================= */
+@media (min-width: 1201px) {
+  .vv-approach {
+    padding-top: 86px;
+    padding-bottom: 86px;
+  }
+
+  .vv-approach-container {
+    max-width: 1500px;
+  }
+
+  .vv-approach-layout {
+    grid-template-columns: minmax(0, 65fr) minmax(0, 35fr);
+    column-gap: 28px;
+    align-items: start;
+  }
+
+  .vv-approach-main {
+    min-width: 0;
+  }
+
+  .vv-approach-intro {
+    max-width: 900px;
+    margin: 0 0 24px;
+  }
+
+  .vv-approach-intro h2 {
+    font-size: clamp(38px, 3.15vw, 50px);
+    line-height: 1.08;
+    letter-spacing: -1px;
+  }
+
+  .vv-approach-intro > p:last-child {
+    max-width: 760px;
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .vv-approach-panel {
+    min-height: 560px;
+    height: 560px;
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .vv-stage-navigation {
+    padding: 14px 10px;
+  }
+
+  .vv-stage-navigation::before {
+    left: 39px;
+    top: 43px;
+    bottom: 43px;
+  }
+
+  .vv-stage {
+    grid-template-columns: 40px 32px minmax(0, 1fr);
+    height: 70px;
+    padding: 0 7px;
+  }
+
+  .vv-stage-icon {
+    width: 33px;
+    height: 33px;
+    font-size: 19px;
+  }
+
+  .vv-stage-number {
+    font-size: 12px;
+  }
+
+  .vv-stage-name {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .vv-approach-content {
+    padding: 34px 30px 78px;
+  }
+
+  .vv-large-number {
+    width: 72px;
+    height: 72px;
+    font-size: 30px;
+  }
+
+  .vv-slide-top {
+    gap: 22px;
+  }
+
+  .vv-slide-content h3 {
+    font-size: clamp(28px, 2.35vw, 38px);
+    line-height: 1.12;
+  }
+
+  .vv-slide-description {
+    max-width: 650px;
+    margin: 18px 0 20px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .vv-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .vv-feature {
+    min-height: 43px;
+    padding: 10px 12px;
+    font-size: 10.5px;
+  }
+
+  .vv-slide-controls {
+    left: 30px;
+    right: 30px;
+    bottom: 19px;
+  }
+
+  /* Right column begins exactly where the left methodology panel begins. */
+  .vv-approach-visual {
+    min-width: 0;
+    min-height: 560px;
+    height: 560px;
+    padding-top: 0;
+    align-self: start;
+    display: block;
+  }
+
+  .vv-approach-visual::before {
+    content: "360° END-TO-END IT SOLUTIONS";
+    display: block;
+    height: 0;
+    overflow: visible;
+    position: relative;
+    top: -30px;
+    color: rgba(255,255,255,.54);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .vv-approach-visual .solution-wheel {
+    width: 100%;
+    height: 560px;
+    min-height: 560px;
+    border-radius: 8px;
+  }
+
+  .vv-approach-visual .wheel-core {
+    width: 88px;
+    height: 88px;
+    font-size: 18px;
+    border-width: 4px;
+  }
+
+  .vv-approach-visual .wheel-line {
+    width: min(145px, 31%);
+  }
+
+  .vv-approach-visual .wheel-card {
+    width: 112px;
+    min-height: 74px;
+  }
+
+  .vv-approach-visual .wheel-card strong {
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .vv-approach-visual .wheel-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .vv-approach-visual .wheel-top {
+    top: 6%;
+    width: 145px;
+  }
+
+  .vv-approach-visual .wheel-right-top {
+    right: 1%;
+    top: 25%;
+  }
+
+  .vv-approach-visual .wheel-right-bottom {
+    right: 1%;
+    bottom: 23%;
+  }
+
+  .vv-approach-visual .wheel-bottom {
+    bottom: 8%;
+    width: 145px;
+  }
+
+  .vv-approach-visual .wheel-left-bottom {
+    left: 1%;
+    bottom: 23%;
+  }
+
+  .vv-approach-visual .wheel-left-top {
+    left: 1%;
+    top: 25%;
+  }
+
+  .vv-approach-visual .wheel-caption {
+    bottom: 14px;
+    font-size: 11px;
+  }
+
+  .vv-approach-visual .wheel-caption span {
+    width: 28px;
+  }
+
+  /* Remove the decorative globe from the left panel at desktop;
+     the 360° visual already occupies the right column. */
+  .vv-approach-content .vv-tech-globe {
+    opacity: .10;
+    right: -235px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .vv-approach-layout {
+    grid-template-columns: minmax(0, 64fr) minmax(280px, 36fr);
+    column-gap: 20px;
+    align-items: start;
+  }
+
+  .vv-approach-intro {
+    margin-bottom: 22px;
+  }
+
+  .vv-approach-panel {
+    min-height: 560px;
+  }
+
+  .vv-approach-visual {
+    min-height: 560px;
+    height: 560px;
+    align-self: start;
+  }
+
+  .vv-approach-visual .solution-wheel {
+    height: 560px;
+    min-height: 560px;
+  }
+
+  .vv-approach-visual .wheel-line {
+    width: 120px;
+  }
+
+  .vv-approach-visual .wheel-card {
+    width: 105px;
+  }
+
+  .vv-approach-visual .wheel-card strong {
+    font-size: 10px;
+  }
+
+  .vv-approach-visual .wheel-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vv-approach-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .vv-approach-visual {
+    min-height: 500px;
+    height: 500px;
+    align-self: auto;
+  }
+
+  .vv-approach-visual .solution-wheel {
+    min-height: 500px;
+    height: 500px;
+  }
+}
+
+/* =========================================================
+   VVTECH APPROACH - FLUID SCREEN-BASED ALIGNMENT
+   Final override: no fixed 65/35 split and no fixed viewport height.
+   The right visual receives a responsive width; the approach panel
+   and 360° animation scale naturally with the available screen.
+   ========================================================= */
+
+@media (min-width: 1201px) {
+  .vv-approach-container {
+    width: min(100%, 1680px);
+    max-width: 1680px;
+  }
+
+  .vv-approach-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(320px, 33vw, 560px);
+    gap: clamp(22px, 2.2vw, 40px);
+    align-items: start;
+  }
+
+  .vv-approach-main {
+    min-width: 0;
+  }
+
+  .vv-approach-intro {
+    max-width: min(100%, 900px);
+  }
+
+  .vv-approach-panel {
+    height: auto;
+    min-height: clamp(500px, 38vw, 620px);
+  }
+
+  .vv-approach-content {
+    min-width: 0;
+  }
+
+  .vv-approach-visual {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    margin-top: 0;
+    align-self: stretch;
+  }
+
+  .vv-approach-visual .solution-wheel {
+    width: 100%;
+    height: clamp(500px, 38vw, 620px);
+    min-height: 0;
+    max-height: 620px;
+  }
+
+  /* Let the wheel breathe as its column becomes wider/narrower. */
+  .vv-approach-visual .wheel-line {
+    width: clamp(110px, 11vw, 175px);
+  }
+
+  .vv-approach-visual .wheel-card {
+    width: clamp(100px, 9vw, 145px);
+    min-height: clamp(68px, 5vw, 82px);
+  }
+
+  .vv-approach-visual .wheel-top,
+  .vv-approach-visual .wheel-bottom {
+    width: clamp(130px, 12vw, 180px);
+  }
+
+  .vv-approach-visual .wheel-core {
+    width: clamp(78px, 6vw, 100px);
+    height: clamp(78px, 6vw, 100px);
+    font-size: clamp(16px, 1.3vw, 20px);
+  }
+}
+
+/* Medium desktop / laptop: let both columns follow available width. */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .vv-approach-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(300px, 34vw, 430px);
+    gap: clamp(18px, 2.5vw, 28px);
+    align-items: start;
+  }
+
+  .vv-approach-panel {
+    height: auto;
+    min-height: clamp(500px, 52vw, 590px);
+  }
+
+  .vv-approach-visual {
+    height: auto;
+    min-height: 0;
+    margin-top: clamp(76px, 9vw, 100px);
+  }
+
+  .vv-approach-visual .solution-wheel {
+    height: clamp(500px, 52vw, 590px);
+    min-height: 0;
+  }
+}
+
+/* Tablets / phones continue to use the existing stacked layout. */
+@media (max-width: 900px) {
+  .vv-approach-visual {
+    margin-top: 28px;
+  }
+}
+
+
+
+/* =========================================================
+   VVTECH APPROACH - FINAL RESPONSIVE ALIGNMENT
+   The section heading is full-width, then the methodology
+   panel and 360° visual share the SAME height and top edge.
+   No fixed 65/35 split.
+   ========================================================= */
+
+.vv-approach-container {
+  width: min(100%, 1500px);
+  margin-inline: auto;
+}
+
+.vv-approach > .vv-approach-container > .vv-approach-intro {
+  width: min(100%, 920px);
+  margin: 0 0 clamp(24px, 2.2vw, 34px);
+}
+
+.vv-approach-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(360px, 31vw, 500px);
+  gap: clamp(20px, 2vw, 32px);
+  align-items: stretch;
+}
+
+.vv-approach-main {
+  min-width: 0;
+  display: flex;
+}
+
+.vv-approach-panel {
+  width: 100%;
+  height: clamp(500px, 39vw, 580px);
+  min-height: 0;
+}
+
+.vv-approach-visual {
+  width: 100%;
+  height: clamp(500px, 39vw, 580px);
+  min-height: 0;
+  align-self: stretch;
+  display: block;
+}
+
+.vv-approach-visual .solution-wheel {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Keep the right visual vertically aligned with the methodology panel. */
+.vv-approach-visual::before {
+  display: none !important;
+}
+
+/* Let the left content breathe inside the matched-height panel. */
+.vv-approach-content {
+  min-width: 0;
+  height: 100%;
+  padding: clamp(30px, 3vw, 42px) clamp(24px, 2.5vw, 34px) 78px;
+}
+
+.vv-slide-content {
+  width: 100%;
+  max-width: none;
+}
+
+.vv-slide-description {
+  max-width: min(100%, 760px);
+}
+
+.vv-feature-grid {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* Prevent the 360° cards from becoming oversized in the narrower column. */
+.vv-approach-visual .wheel-card strong {
+  font-size: clamp(10px, 0.8vw, 13px);
+}
+
+.vv-approach-visual .wheel-top {
+  width: clamp(130px, 11vw, 180px);
+}
+
+.vv-approach-visual .wheel-line {
+  width: clamp(110px, 12vw, 175px);
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .vv-approach-container {
+    width: min(100% - 40px, 1120px);
+  }
+
+  .vv-approach-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(320px, 34vw, 420px);
+    gap: 20px;
+  }
+
+  .vv-approach-panel,
+  .vv-approach-visual {
+    height: 540px;
+  }
+
+  .vv-approach-panel {
+    grid-template-columns: 185px minmax(0, 1fr);
+  }
+
+  .vv-approach-content {
+    padding: 30px 24px 74px;
+  }
+
+  .vv-slide-content h3 {
+    font-size: clamp(26px, 3vw, 36px);
+  }
+
+  .vv-slide-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vv-approach-container {
+    width: min(100% - 32px, 760px);
+  }
+
+  .vv-approach > .vv-approach-container > .vv-approach-intro {
+    margin-bottom: 26px;
+  }
+
+  .vv-approach-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vv-approach-panel {
+    height: auto;
+    min-height: 560px;
+  }
+
+  .vv-approach-visual {
+    height: 520px;
+    min-height: 520px;
+  }
+
+  .vv-approach-visual .solution-wheel {
+    height: 100%;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vv-approach-container {
+    width: calc(100% - 24px);
+  }
+
+  .vv-approach-panel {
+    min-height: 0;
+  }
+
+  .vv-approach-content {
+    height: auto;
+  }
+
+  .vv-approach-visual,
+  .vv-approach-visual .solution-wheel {
+    height: 480px;
+    min-height: 480px;
+  }
+}
+
+
+/* FINAL ALIGNMENT FIX: both desktop panels must start and end on the same horizontal lines. */
+@media (min-width: 901px) {
+  .vv-approach-layout {
+    align-items: stretch;
+  }
+  .vv-approach-main,
+  .vv-approach-panel,
+  .vv-approach-visual,
+  .vv-approach-visual .solution-wheel {
+    margin-top: 0 !important;
+    align-self: stretch;
+  }
+  .vv-approach-panel,
+  .vv-approach-visual,
+  .vv-approach-visual .solution-wheel {
+    height: clamp(500px, 39vw, 580px);
+    min-height: 0;
+  }
+}
