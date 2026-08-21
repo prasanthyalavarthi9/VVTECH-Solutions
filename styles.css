@@ -5272,3 +5272,1162 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 730; }
 }
 #contact .vv-ribbon-wordmark strong{font-weight:850}
 #contact .vv-panel-header{padding-top:54px}
+
+
+/* =========================================================
+   VVTech service sub-service hover descriptions
+   Existing service layout/grid is intentionally preserved.
+   ========================================================= */
+.service-panel li {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: visible;
+  cursor: default;
+  transition:
+    transform .28s cubic-bezier(.2,.75,.25,1),
+    border-color .28s ease,
+    background .28s ease,
+    box-shadow .28s ease,
+    z-index 0s linear;
+}
+
+.service-item-title {
+  display: block;
+  position: relative;
+  z-index: 2;
+  transition: transform .28s ease, color .28s ease;
+}
+
+.service-item-description {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: calc(100% + 8px);
+  z-index: 30;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 238, 255, .34);
+  border-radius: 7px;
+  color: rgba(255,255,255,.82);
+  background:
+    linear-gradient(145deg, rgba(7,20,36,.98), rgba(3,11,22,.98));
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.42),
+    0 0 18px rgba(0,194,204,.12);
+  font-size: 11.5px;
+  line-height: 1.45;
+  font-weight: 560;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px) scale(.97);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    opacity .22s ease,
+    visibility .22s ease,
+    transform .22s ease;
+}
+
+.service-panel li:hover,
+.service-panel li:focus-visible {
+  z-index: 50;
+  transform: translateY(-2px) scale(1.035);
+  border-color: rgba(0,238,255,.55);
+  background:
+    linear-gradient(135deg, rgba(0,194,204,.16), rgba(140,198,63,.08)),
+    rgba(255,255,255,.075);
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.28),
+    0 0 20px rgba(0,194,204,.13);
+}
+
+.service-panel li:hover .service-item-title,
+.service-panel li:focus-visible .service-item-title {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.service-panel li:hover .service-item-description,
+.service-panel li:focus-visible .service-item-description {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.service-panel li:focus-visible {
+  outline: 1px solid rgba(0,238,255,.65);
+  outline-offset: 2px;
+}
+
+/* Keep the compact mobile layout intact; show the description below
+   the item only while it is being touched/focused/hovered. */
+@media (max-width: 760px) {
+  .service-panel li {
+    overflow: visible;
+  }
+
+  .service-item-description {
+    left: 8px;
+    right: 8px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-panel li,
+  .service-item-title,
+  .service-item-description {
+    transition: none;
+  }
+}
+
+
+/* Service description direction: open away from the row so the
+   popup does not cover the service item itself.
+   Desktop: first/top row opens upward; second/bottom row opens downward. */
+.service-panel li:nth-child(-n+4) .service-item-description {
+  top: auto;
+  bottom: calc(100% + 8px);
+  transform-origin: bottom center;
+}
+
+.service-panel li:nth-child(n+5) .service-item-description {
+  top: calc(100% + 8px);
+  bottom: auto;
+  transform-origin: top center;
+}
+
+@media (max-width: 760px) {
+  /* On the single-column mobile layout, always open below the item
+     so the description follows the natural reading direction. */
+  .service-panel li .service-item-description {
+    top: calc(100% + 8px);
+    bottom: auto;
+    transform-origin: top center;
+  }
+}
+
+/* VVTech service hover descriptions - client-friendly interaction refinement */
+.service-panel li { position: relative; overflow: visible; }
+.service-panel li:hover .service-item-description,
+.service-panel li:focus-visible .service-item-description { max-width: 330px; }
+.service-item-title { transition: color .22s ease, transform .22s ease; }
+.service-item-description {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+@media (hover: none) and (pointer: coarse) {
+  .service-panel li:active { transform: translateY(-2px) scale(1.02); }
+}
+
+/* Services section eyebrow - match the orange "OUR APPROACH" treatment */
+#services > .section-head > .eyebrow {
+  color: var(--orange) !important;
+  opacity: 1;
+}
+
+/* =========================================================
+   VVTECH CONTACT INFO — PREMIUM CARD LAYOUT
+   Replaces the old flat stacked rows with compact interactive cards.
+   ========================================================= */
+#contact .vv-contact-info{
+  margin-top:24px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+#contact .vv-info-item{
+  min-height:94px;
+  grid-template-columns:58px minmax(0,1fr) 22px;
+  gap:12px;
+  padding:14px 14px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:15px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in srgb,currentColor 10%,transparent), transparent 42%),
+    linear-gradient(145deg,rgba(10,31,47,.92),rgba(2,14,26,.96));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 10px 24px rgba(0,0,0,.14);
+  transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease,background .32s ease;
+}
+
+#contact .vv-info-item::after{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:0;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,currentColor,transparent);
+  opacity:.22;
+  transition:opacity .32s ease,transform .32s ease;
+}
+
+#contact .vv-info-item:hover{
+  transform:translateY(-4px);
+  border-color:color-mix(in srgb,currentColor 62%,rgba(255,255,255,.18));
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in srgb,currentColor 16%,transparent), transparent 48%),
+    linear-gradient(145deg,rgba(12,39,57,.98),rgba(3,18,31,.98));
+  box-shadow:0 12px 30px rgba(0,0,0,.25),0 0 22px color-mix(in srgb,currentColor 13%,transparent),inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+#contact .vv-info-item:hover::after{
+  opacity:.9;
+  transform:scaleX(1.02);
+}
+
+#contact .vv-info-icon{
+  width:52px;
+  height:52px;
+  border-width:1px;
+  background:rgba(0,0,0,.24);
+  box-shadow:0 0 14px color-mix(in srgb,currentColor 32%,transparent),inset 0 0 12px color-mix(in srgb,currentColor 8%,transparent);
+}
+
+#contact .vv-info-item:hover .vv-info-icon{
+  transform:scale(1.06);
+  box-shadow:0 0 22px color-mix(in srgb,currentColor 48%,transparent),inset 0 0 14px color-mix(in srgb,currentColor 12%,transparent);
+}
+
+#contact .vv-info-icon svg{
+  width:28px;
+  height:28px;
+  stroke-width:2.3;
+}
+
+#contact .vv-info-text strong{
+  margin-bottom:5px;
+  font-size:15px;
+  letter-spacing:.1px;
+}
+
+#contact .vv-info-text span{
+  display:block;
+  font-size:13px;
+  line-height:1.4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+#contact .vv-info-arrow{
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+  border:1px solid currentColor;
+  border-radius:50%;
+  color:currentColor;
+  font-size:14px;
+  line-height:1;
+  opacity:.65;
+  transition:opacity .3s ease,transform .3s ease,background .3s ease;
+}
+
+#contact .vv-info-item:hover .vv-info-arrow{
+  opacity:1;
+  transform:translate(2px,-2px);
+  background:color-mix(in srgb,currentColor 10%,transparent);
+}
+
+#contact .cyan-location-info{
+  color:#21bfff;
+}
+
+@media (max-width:760px){
+  #contact .vv-contact-info{
+    grid-template-columns:1fr;
+  }
+
+  #contact .vv-info-item{
+    min-height:82px;
+  }
+}
+
+/* =========================================================
+   VVTECH CONTACT — COMPACT PREMIUM LAYOUT v2
+   Keeps the approved content/design, but reduces the vertical
+   footprint and gives the contact panel a cleaner hierarchy.
+   ========================================================= */
+#contact {
+  padding-top: 54px !important;
+  padding-bottom: 54px !important;
+}
+
+#contact .vv-contact-section {
+  width: min(1480px, 100%);
+  height: 500px !important;
+  min-height: 500px !important;
+  padding: 18px 24px !important;
+  grid-template-columns: minmax(0, .94fr) minmax(560px, 1.06fr) !important;
+  gap: 24px !important;
+  border-radius: 20px;
+}
+
+#contact .vv-contact-left {
+  padding: 4px 8px 0 14px !important;
+  align-self: center;
+}
+
+#contact .vv-section-label {
+  margin-bottom: 12px !important;
+  font-size: 14px !important;
+  letter-spacing: 1.2px !important;
+}
+
+#contact .vv-contact-title {
+  font-size: clamp(42px, 3.45vw, 58px) !important;
+  line-height: .99 !important;
+  letter-spacing: -1.9px !important;
+}
+
+#contact .vv-title-lines {
+  margin: 12px 0 11px !important;
+}
+
+#contact .vv-contact-description {
+  max-width: 610px !important;
+  margin-bottom: 16px !important;
+  font-size: 14px !important;
+  line-height: 1.48 !important;
+}
+
+#contact .vv-feature-grid {
+  gap: 9px 12px !important;
+  max-width: 720px !important;
+}
+
+#contact .vv-feature-card {
+  min-height: 88px !important;
+  padding: 10px 12px !important;
+  grid-template-columns: 68px 1fr !important;
+  gap: 11px !important;
+  border-radius: 13px !important;
+}
+
+#contact .vv-feature-icon {
+  width: 58px !important;
+  height: 58px !important;
+}
+
+#contact .vv-feature-icon svg {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+#contact .vv-feature-card h3 {
+  font-size: 15px !important;
+}
+
+#contact .vv-feature-card p {
+  margin-top: 3px !important;
+  font-size: 11.5px !important;
+  line-height: 1.32 !important;
+}
+
+#contact .vv-card-line {
+  width: 24px !important;
+  height: 2px !important;
+  margin: 5px 0 0 !important;
+}
+
+/* Right panel: compact, polished, no excessive empty space */
+#contact .vv-contact-panel {
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 16px 18px 13px !important;
+  border-radius: 20px !important;
+  align-self: stretch !important;
+}
+
+#contact .vv-panel-ribbon {
+  height: 50px !important;
+  padding: 0 18px !important;
+  gap: 10px !important;
+}
+
+#contact .vv-ribbon-mark img {
+  width: 66px !important;
+}
+
+#contact .vv-ribbon-wordmark {
+  font-size: 23px !important;
+  letter-spacing: -.8px !important;
+}
+
+#contact .vv-panel-header {
+  padding-top: 47px !important;
+}
+
+#contact .vv-panel-header p {
+  margin: 0 0 7px !important;
+  font-size: 12px !important;
+}
+
+#contact .vv-panel-lines i {
+  width: 30px !important;
+  height: 2px !important;
+}
+
+#contact .vv-contact-info {
+  margin-top: 10px !important;
+  gap: 9px !important;
+}
+
+#contact .vv-info-item {
+  min-height: 74px !important;
+  grid-template-columns: 52px minmax(0,1fr) 24px !important;
+  gap: 11px !important;
+  padding: 9px 11px !important;
+  border-radius: 13px !important;
+}
+
+#contact .vv-info-icon {
+  width: 46px !important;
+  height: 46px !important;
+}
+
+#contact .vv-info-icon svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+#contact .vv-info-text strong {
+  font-size: 14px !important;
+  margin-bottom: 2px !important;
+}
+
+#contact .vv-info-text span {
+  font-size: 12px !important;
+}
+
+#contact .vv-info-arrow {
+  width: 21px !important;
+  height: 21px !important;
+  font-size: 13px !important;
+}
+
+#contact .vv-panel-bottom {
+  margin-top: 9px !important;
+  padding-top: 9px !important;
+  gap: 12px !important;
+}
+
+#contact .vv-bottom-icon {
+  width: 45px !important;
+  height: 45px !important;
+  flex-basis: 45px !important;
+}
+
+#contact .vv-bottom-icon svg {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+#contact .vv-panel-bottom h3 {
+  font-size: 15px !important;
+}
+
+#contact .vv-panel-bottom strong {
+  font-size: 17px !important;
+}
+
+/* Keep the decorative globe visible but subordinate to the content. */
+#contact .vv-network-globe {
+  width: 390px !important;
+  height: 375px !important;
+  left: 27% !important;
+  top: 7% !important;
+  opacity: .58 !important;
+}
+
+@media (max-width: 1200px) {
+  #contact .vv-contact-section {
+    grid-template-columns: minmax(0, .9fr) minmax(500px, 1.1fr) !important;
+    gap: 18px !important;
+    height: 490px !important;
+    min-height: 490px !important;
+  }
+  #contact .vv-contact-title { font-size: clamp(40px, 4vw, 54px) !important; }
+}
+
+@media (max-width: 980px) {
+  #contact .vv-contact-section {
+    height: auto !important;
+    min-height: 0 !important;
+    grid-template-columns: 1fr !important;
+    padding: 22px !important;
+  }
+  #contact .vv-contact-panel { min-height: 430px !important; }
+  #contact .vv-network-globe { left: 28% !important; top: 250px !important; opacity: .20 !important; }
+}
+
+@media (max-width: 640px) {
+  #contact { padding-top: 34px !important; padding-bottom: 34px !important; }
+  #contact .vv-contact-section { padding: 16px !important; border-radius: 16px !important; }
+  #contact .vv-contact-title { font-size: 38px !important; }
+  #contact .vv-feature-grid { grid-template-columns: 1fr !important; }
+  #contact .vv-contact-panel { min-height: 420px !important; padding: 14px 10px !important; }
+  #contact .vv-contact-info { grid-template-columns: 1fr !important; }
+  #contact .vv-network-globe { left: 4% !important; width: 310px !important; height: 300px !important; }
+}
+
+/* ============================================================
+   VVTECH CONTACT — FINAL COMPACT / PREMIUM POLISH
+   Keeps the approved structure: left content + globe + right
+   single contact panel with four horizontal detail rows.
+   ============================================================ */
+
+#contact .vv-contact-section{
+  width:100%;
+  height:auto !important;
+  min-height:650px !important;
+  max-height:680px;
+  padding:34px clamp(28px,3.2vw,58px) 30px !important;
+  grid-template-columns:minmax(0,1fr) minmax(560px,0.86fr) !important;
+  gap:clamp(26px,3vw,52px) !important;
+  align-items:center !important;
+  overflow:hidden;
+}
+
+#contact .vv-contact-section::before{
+  inset:16px !important;
+  border-radius:20px !important;
+  border-color:rgba(0,194,204,.18) !important;
+}
+
+/* Globe sits behind the left/center content, not inside the panel. */
+#contact .vv-network-globe{
+  width:420px !important;
+  height:420px !important;
+  left:43% !important;
+  top:50% !important;
+  opacity:.30 !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+}
+
+#contact .vv-contact-left{
+  max-width:700px !important;
+  z-index:3 !important;
+  align-self:center !important;
+}
+
+#contact .vv-section-label{
+  margin-bottom:18px !important;
+  font-size:14px !important;
+  letter-spacing:.10em !important;
+}
+
+#contact .vv-contact-title{
+  max-width:650px !important;
+  font-size:clamp(44px,4vw,62px) !important;
+  line-height:1.01 !important;
+  letter-spacing:-1.7px !important;
+}
+
+#contact .vv-title-lines{
+  margin:16px 0 16px !important;
+}
+
+#contact .vv-contact-description{
+  max-width:620px !important;
+  margin:0 0 22px !important;
+  font-size:15px !important;
+  line-height:1.55 !important;
+}
+
+#contact .vv-feature-grid{
+  max-width:720px !important;
+  grid-template-columns:repeat(2,minmax(250px,1fr)) !important;
+  gap:10px !important;
+}
+
+#contact .vv-feature-card{
+  min-height:100px !important;
+  padding:13px 15px !important;
+  grid-template-columns:68px 1fr !important;
+  gap:12px !important;
+  border-radius:14px !important;
+  background:linear-gradient(145deg,rgba(6,22,37,.78),rgba(2,11,22,.90)) !important;
+  border:1px solid rgba(0,194,204,.17) !important;
+}
+
+#contact .vv-feature-icon{
+  width:58px !important;
+  height:58px !important;
+}
+
+#contact .vv-feature-icon svg{
+  width:34px !important;
+  height:34px !important;
+}
+
+#contact .vv-feature-card h3{
+  font-size:15px !important;
+  margin-bottom:2px !important;
+}
+
+#contact .vv-feature-card p{
+  font-size:11.5px !important;
+  line-height:1.35 !important;
+}
+
+#contact .vv-card-line{
+  margin-top:5px !important;
+  width:24px !important;
+  height:2px !important;
+}
+
+/* RIGHT PANEL */
+#contact .vv-contact-panel{
+  width:100% !important;
+  max-width:660px !important;
+  height:auto !important;
+  min-height:505px !important;
+  max-height:535px !important;
+  justify-self:end !important;
+  align-self:center !important;
+  padding:0 !important;
+  border-radius:20px !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(circle at 96% 8%,rgba(18,225,196,.15),transparent 24%),
+    linear-gradient(145deg,#03101d 0%,#06283a 58%,#083a45 100%) !important;
+  border:1px solid rgba(0,217,255,.72) !important;
+  box-shadow:0 20px 55px rgba(0,0,0,.34),0 0 24px rgba(0,217,255,.09),inset 0 0 45px rgba(0,217,255,.035) !important;
+}
+
+/* Keep the current website logo treatment; only scale it to fit the compact panel. */
+#contact .vv-panel-ribbon{
+  min-height:58px !important;
+  padding:10px 20px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  background:rgba(6,25,38,.88) !important;
+  border-bottom:1px solid rgba(0,217,255,.10) !important;
+}
+
+#contact .vv-ribbon-mark img{
+  width:66px !important;
+  height:38px !important;
+  object-fit:contain !important;
+}
+
+#contact .vv-ribbon-wordmark{
+  font-size:26px !important;
+  line-height:1 !important;
+}
+
+#contact .vv-panel-header{
+  padding:12px 20px 4px !important;
+}
+
+#contact .vv-panel-header p{
+  margin:0 0 9px !important;
+  font-size:12.5px !important;
+  color:rgba(255,255,255,.74) !important;
+}
+
+#contact .vv-panel-lines{
+  gap:6px !important;
+}
+
+#contact .vv-panel-lines i{
+  width:34px !important;
+  height:3px !important;
+}
+
+#contact .vv-contact-info{
+  margin:6px 12px 0 !important;
+  padding:0 !important;
+  border-radius:14px !important;
+  overflow:hidden !important;
+  background:rgba(1,8,17,.60) !important;
+  border:1px solid rgba(255,255,255,.07) !important;
+}
+
+#contact .vv-info-item{
+  min-height:67px !important;
+  grid-template-columns:58px 1fr 24px !important;
+  gap:11px !important;
+  padding:8px 12px !important;
+  border-bottom:1px solid rgba(255,255,255,.10) !important;
+  background:linear-gradient(90deg,rgba(5,24,38,.72),rgba(3,19,31,.48)) !important;
+  transition:transform .25s ease,background .25s ease,box-shadow .25s ease !important;
+}
+
+#contact .vv-info-item:last-child{
+  border-bottom:0 !important;
+}
+
+#contact .vv-info-item:hover{
+  transform:translateX(3px) !important;
+  background:linear-gradient(90deg,rgba(7,34,50,.86),rgba(5,25,39,.62)) !important;
+  box-shadow:inset 3px 0 0 currentColor !important;
+}
+
+#contact .vv-info-icon{
+  width:46px !important;
+  height:46px !important;
+  border-width:1.4px !important;
+}
+
+#contact .vv-info-icon svg{
+  width:27px !important;
+  height:27px !important;
+}
+
+#contact .vv-info-text strong{
+  margin-bottom:2px !important;
+  font-size:14px !important;
+}
+
+#contact .vv-info-text span{
+  font-size:11.5px !important;
+  line-height:1.25 !important;
+}
+
+#contact .vv-info-arrow{
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+  border:1px solid currentColor !important;
+  border-radius:50% !important;
+  font-size:14px !important;
+  line-height:1 !important;
+  opacity:.72 !important;
+  transition:transform .25s ease,opacity .25s ease,box-shadow .25s ease !important;
+}
+
+#contact .vv-info-item:hover .vv-info-arrow{
+  transform:translateX(2px) !important;
+  opacity:1 !important;
+  box-shadow:0 0 12px currentColor !important;
+}
+
+#contact .vv-panel-bottom{
+  margin:11px 20px 0 !important;
+  padding:12px 0 14px !important;
+  gap:14px !important;
+  border-top:1px solid rgba(255,255,255,.11) !important;
+}
+
+#contact .vv-bottom-icon{
+  width:48px !important;
+  height:48px !important;
+  flex-basis:48px !important;
+}
+
+#contact .vv-bottom-icon svg{
+  width:27px !important;
+  height:27px !important;
+}
+
+#contact .vv-panel-bottom h3{
+  font-size:16px !important;
+  margin:0 0 2px !important;
+}
+
+#contact .vv-panel-bottom strong{
+  font-size:18px !important;
+}
+
+/* Keep the network waves below the cards instead of pushing the section taller. */
+#contact .vv-contact-wave{
+  right:50% !important;
+  height:95px !important;
+  bottom:-2px !important;
+  opacity:.66 !important;
+}
+
+@media (min-width:1500px){
+  #contact .vv-contact-section{
+    min-height:660px !important;
+    max-height:680px !important;
+    grid-template-columns:minmax(0,1.04fr) minmax(590px,.84fr) !important;
+  }
+  #contact .vv-network-globe{
+    width:430px !important;
+    height:430px !important;
+  }
+}
+
+@media (max-width:1200px) and (min-width:901px){
+  #contact .vv-contact-section{
+    grid-template-columns:minmax(0,1fr) minmax(520px,.86fr) !important;
+    gap:24px !important;
+    padding-left:28px !important;
+    padding-right:28px !important;
+  }
+  #contact .vv-contact-title{font-size:50px !important;}
+  #contact .vv-contact-panel{max-width:600px !important;}
+}
+
+@media (max-width:900px){
+  #contact .vv-contact-section{
+    min-height:auto !important;
+    max-height:none !important;
+    grid-template-columns:1fr !important;
+    padding:40px 24px 46px !important;
+  }
+  #contact .vv-contact-panel{
+    max-width:760px !important;
+    min-height:auto !important;
+    max-height:none !important;
+    justify-self:center !important;
+  }
+  #contact .vv-network-globe{
+    width:360px !important;
+    height:360px !important;
+    left:50% !important;
+    top:27% !important;
+    opacity:.18 !important;
+  }
+}
+
+@media (max-width:650px){
+  #contact .vv-contact-section{padding:32px 16px 38px !important;}
+  #contact .vv-contact-title{font-size:40px !important;}
+  #contact .vv-feature-grid{grid-template-columns:1fr !important;}
+  #contact .vv-contact-panel{border-radius:16px !important;}
+  #contact .vv-ribbon-wordmark{font-size:22px !important;}
+  #contact .vv-panel-ribbon{padding:9px 14px !important;}
+  #contact .vv-panel-header{padding:11px 14px 3px !important;}
+  #contact .vv-contact-info{margin:6px 8px 0 !important;}
+  #contact .vv-info-item{grid-template-columns:52px 1fr 22px !important;min-height:62px !important;padding:7px 10px !important;}
+  #contact .vv-info-icon{width:42px !important;height:42px !important;}
+  #contact .vv-info-icon svg{width:24px !important;height:24px !important;}
+  #contact .vv-panel-bottom{margin-left:14px !important;margin-right:14px !important;}
+}
+
+/* =========================================================
+   VVTECH CONTACT — FINAL BALANCE / ALIGNMENT POLISH
+   Fixes ribbon/header overlap, excessive panel height, and
+   improves overall desktop proportions without changing content.
+   ========================================================= */
+
+#contact .vv-contact-section{
+  grid-template-columns:minmax(0,1.04fr) minmax(560px,.96fr) !important;
+  gap:34px !important;
+  height:560px !important;
+  min-height:560px !important;
+  padding:24px 34px 24px !important;
+  align-items:center !important;
+}
+
+#contact .vv-contact-left{
+  max-width:735px !important;
+  align-self:center !important;
+  padding-top:0 !important;
+}
+
+#contact .vv-contact-title{
+  max-width:620px !important;
+  font-size:clamp(45px,4.0vw,60px) !important;
+  line-height:1.01 !important;
+}
+
+#contact .vv-contact-description{
+  max-width:610px !important;
+  font-size:15px !important;
+  line-height:1.5 !important;
+  margin-bottom:0px !important;
+}
+
+#contact .vv-feature-grid{
+max-width: 9000px !important;
+  gap: 10px 49px !important;
+  max-height: 2000px !important;
+}
+
+#contact .vv-feature-card{
+  min-height:92px !important;
+  padding:12px 14px !important;
+  grid-template-columns:62px 1fr !important;
+  gap:12px !important;
+  border-radius:14px !important;
+}
+
+#contact .vv-feature-icon{
+  width:56px !important;
+  height:56px !important;
+}
+
+#contact .vv-feature-icon svg{
+  width:32px !important;
+  height:32px !important;
+}
+
+#contact .vv-feature-card h3{
+  font-size:16px !important;
+}
+
+#contact .vv-feature-card p{
+  font-size:12px !important;
+  line-height:1.35 !important;
+}
+
+/* Right panel: compact, centered, with clean header spacing */
+#contact .vv-contact-panel{
+  width:100% !important;
+  max-width:760px !important;
+  height:488px !important;
+  min-height:488px !important;
+  align-self:center !important;
+  justify-self:end !important;
+  padding:0 18px 14px !important;
+  border-radius:20px !important;
+}
+
+/* Ribbon no longer collides with the subheading */
+#contact .vv-panel-ribbon{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  height:64px !important;
+  margin:0 -18px !important;
+  padding:0 22px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  border-radius:18px 18px 0 0 !important;
+}
+
+#contact .vv-ribbon-mark img{
+  width:66px !important;
+  height:42px !important;
+  object-fit:contain !important;
+}
+
+#contact .vv-ribbon-wordmark{
+  font-size:25px !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+  letter-spacing:-.035em !important;
+}
+
+#contact .vv-ribbon-wordmark strong{
+  color:#fff !important;
+  font-weight:800 !important;
+}
+
+/* Put the service subtitle clearly below the ribbon */
+#contact .vv-panel-header{
+  padding-top:0 !important;
+  margin-top:14px !important;
+}
+
+#contact .vv-panel-header p{
+  margin:0 0 9px !important;
+  font-size:13px !important;
+  line-height:1.25 !important;
+}
+
+#contact .vv-panel-lines i{
+  width:30px !important;
+  height:3px !important;
+}
+
+#contact .vv-contact-info{
+ margin-top: 50px !important;
+  border-radius: 23px !important;
+}
+
+#contact .vv-info-item{
+  min-height:68px !important;
+  grid-template-columns:58px 1fr 24px !important;
+  padding:7px 12px !important;
+}
+
+#contact .vv-info-icon{
+  width:48px !important;
+  height:48px !important;
+}
+
+#contact .vv-info-icon svg{
+  width:27px !important;
+  height:27px !important;
+}
+
+#contact .vv-info-text strong{
+  font-size:15px !important;
+  margin-bottom:2px !important;
+}
+
+#contact .vv-info-text span{
+  font-size:12px !important;
+}
+
+#contact .vv-info-arrow{
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  border-radius:50% !important;
+  font-size:15px !important;
+  line-height:1 !important;
+  color:rgba(255,255,255,.58) !important;
+}
+
+#contact .vv-info-item:hover .vv-info-arrow{
+  border-color:currentColor !important;
+  color:currentColor !important;
+  transform:translateY(-1px) !important;
+}
+
+#contact .vv-panel-bottom{
+ margin-top: 30px !important;
+  padding-top: 20px !important;
+  gap:13px !important;
+}
+
+#contact .vv-bottom-icon{
+  width:48px !important;
+  height:48px !important;
+  flex-basis:48px !important;
+}
+
+#contact .vv-bottom-icon svg{
+  width:27px !important;
+  height:27px !important;
+}
+
+#contact .vv-panel-bottom h3{
+  font-size:17px !important;
+  margin-bottom:2px !important;
+}
+
+#contact .vv-panel-bottom strong{
+  font-size:19px !important;
+}
+
+/* Globe: keep it behind the left content, visible but not overpowering */
+#contact .vv-network-globe{
+  width:420px !important;
+  height:420px !important;
+  left:41% !important;
+  top:52% !important;
+  opacity:.25 !important;
+  z-index:1 !important;
+  animation:vvContactGlobeRotate 34s linear infinite !important;
+}
+
+#contact .vv-network-globe-image{
+  opacity:.48 !important;
+  filter:saturate(.65) brightness(.76) contrast(1.05) !important;
+}
+
+#contact .vv-network-globe::before,
+#contact .vv-network-globe::after{
+  opacity:.32 !important;
+}
+
+#contact .vv-contact-wave{
+  height:76px !important;
+  opacity:.35 !important;
+  width: 11000px;
+}
+}
+
+/* Keep the outer contact frame clean */
+#contact .vv-contact-section::before{
+  inset:11px !important;
+  border-radius:19px !important;
+}
+
+@media (min-width:1500px){
+  #contact .vv-contact-section{
+    grid-template-columns:minmax(0,1.03fr) minmax(620px,.97fr) !important;
+    height:560px !important;
+    min-height:560px !important;
+    padding:24px 44px !important;
+  }
+  #contact .vv-contact-panel{
+    max-width:780px !important;
+  }
+  #contact .vv-network-globe{
+    width:600px !important;
+    height:550px !important;
+    left:41% !important;
+  }
+}
+
+@media (max-width:1250px) and (min-width:901px){
+  #contact .vv-contact-section{
+    grid-template-columns:minmax(0,1fr) minmax(520px,.98fr) !important;
+    gap:24px !important;
+    height:540px !important;
+    min-height:540px !important;
+    padding:22px 26px !important;
+  }
+  #contact .vv-contact-panel{
+    height:470px !important;
+    min-height:470px !important;
+  }
+  #contact .vv-ribbon-wordmark{
+    font-size:22px !important;
+  }
+  #contact .vv-network-globe{
+    width:360px !important;
+    height:360px !important;
+    left:42% !important;
+  }
+}
+
+@media (max-width:900px){
+  #contact .vv-contact-section{
+    height:auto !important;
+    min-height:0 !important;
+    grid-template-columns:1fr !important;
+    padding:34px 24px 38px !important;
+  }
+  #contact .vv-contact-panel{
+    height:auto !important;
+    min-height:0 !important;
+    max-width:760px !important;
+    justify-self:center !important;
+    padding-bottom:16px !important;
+  }
+  #contact .vv-panel-ribbon{
+    margin:0 -18px !important;
+  }
+  #contact .vv-network-globe{
+    left:50% !important;
+    top:24% !important;
+    width:320px !important;
+    height:320px !important;
+    opacity:.16 !important;
+  }
+}
+
+@media (max-width:650px){
+  #contact .vv-contact-section{
+    padding:28px 16px 32px !important;
+  }
+  #contact .vv-panel-ribbon{
+    height:58px !important;
+    padding:0 16px !important;
+  }
+  #contact .vv-ribbon-mark img{
+    width:56px !important;
+    height:36px !important;
+  }
+  #contact .vv-ribbon-wordmark{
+    font-size:20px !important;
+  }
+}
