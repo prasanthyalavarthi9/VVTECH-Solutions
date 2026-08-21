@@ -6243,7 +6243,7 @@ max-width: 9000px !important;
 }
 
 #contact .vv-contact-info{
- margin-top: 50px !important;
+ margin-top: 15px !important;
   border-radius: 23px !important;
 }
 
@@ -6282,6 +6282,7 @@ max-width: 9000px !important;
   font-size:15px !important;
   line-height:1 !important;
   color:rgba(255,255,255,.58) !important;
+  display: none !important;
 }
 
 #contact .vv-info-item:hover .vv-info-arrow{
@@ -6338,9 +6339,10 @@ max-width: 9000px !important;
 }
 
 #contact .vv-contact-wave{
-  height:76px !important;
-  opacity:.35 !important;
-  width: 11000px;
+height: 80px !important;
+  opacity: .55 !important;
+  width: 17000px;
+}
 }
 }
 
@@ -6429,5 +6431,843 @@ max-width: 9000px !important;
   }
   #contact .vv-ribbon-wordmark{
     font-size:20px !important;
+  }
+}
+
+
+/* =========================================================
+   VVTECH AI CHATBOT WIDGET
+   ========================================================= */
+
+#vvtech-ai-widget {
+  position: fixed;
+  right: 26px;
+  bottom: 24px;
+  z-index: 999999;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+#vvtech-ai-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 7px 15px 7px 8px;
+  border: 1px solid rgba(0, 194, 204, .42);
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(5, 18, 31, .97), rgba(7, 47, 58, .97));
+  box-shadow: 0 14px 38px rgba(0,0,0,.35), 0 0 24px rgba(0,194,204,.14);
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+#vvtech-ai-launcher:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 194, 204, .75);
+  box-shadow: 0 18px 46px rgba(0,0,0,.42), 0 0 32px rgba(0,194,204,.22);
+}
+
+.vvtech-ai-launcher-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  color: #04131d;
+  box-shadow: 0 0 18px rgba(0,194,204,.28);
+}
+
+.vvtech-ai-launcher-icon svg,
+.vvtech-ai-brand-icon svg,
+#vvtech-ai-send svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vvtech-ai-launcher-text {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+.vvtech-ai-online-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8cc63f;
+  box-shadow: 0 0 10px rgba(140,198,63,.9);
+  animation: vvtechAiBlink 2s ease-in-out infinite;
+}
+
+.vvtech-ai-panel {
+  position: absolute;
+  right: 0;
+  bottom: 64px;
+  width: min(410px, calc(100vw - 28px));
+  height: min(610px, calc(100vh - 105px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(0,194,204,.34);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(0,194,204,.13), transparent 32%),
+    linear-gradient(145deg, #06111d 0%, #071c2b 52%, #041019 100%);
+  box-shadow: 0 28px 90px rgba(0,0,0,.52), 0 0 42px rgba(0,194,204,.12);
+  backdrop-filter: blur(18px);
+  animation: vvtechAiOpen .24s ease-out both;
+}
+
+.vvtech-ai-header {
+  flex: 0 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(90deg, rgba(0,194,204,.09), rgba(140,198,63,.06));
+}
+
+.vvtech-ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vvtech-ai-brand-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #04131d;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  box-shadow: 0 0 20px rgba(0,194,204,.2);
+}
+
+.vvtech-ai-brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.vvtech-ai-brand strong {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.vvtech-ai-brand small {
+  margin-top: 3px;
+  color: rgba(255,255,255,.56);
+  font-size: 10px;
+}
+
+#vvtech-ai-close {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 9px;
+  color: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.05);
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#vvtech-ai-close:hover {
+  color: #fff;
+  background: rgba(255,255,255,.1);
+}
+
+.vvtech-ai-messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 17px 15px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,194,204,.35) transparent;
+}
+
+.vvtech-ai-message {
+  max-width: 88%;
+  margin: 0 0 12px;
+  padding: 11px 13px;
+  border-radius: 13px;
+  color: #dce9ee;
+  font-size: 13px;
+  line-height: 1.55;
+  animation: vvtechAiMessage .2s ease-out both;
+}
+
+.vvtech-ai-message p {
+  margin: 0 0 7px;
+  color: inherit;
+  font-size: inherit;
+}
+
+.vvtech-ai-message p:last-child {
+  margin-bottom: 0;
+}
+
+.vvtech-ai-bot {
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.055);
+}
+
+.vvtech-ai-user {
+  margin-left: auto;
+  color: #fff;
+  background: linear-gradient(135deg, #087f94, #087f72);
+  border: 1px solid rgba(0,194,204,.18);
+}
+
+.vvtech-ai-message-label {
+  margin-bottom: 5px;
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.vvtech-ai-message-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.vvtech-ai-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 4px 0 14px;
+}
+
+.vvtech-ai-suggestions button {
+  padding: 8px 10px;
+  border: 1px solid rgba(0,194,204,.24);
+  border-radius: 9px;
+  color: #75dfe6;
+  background: rgba(0,194,204,.045);
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: .18s ease;
+}
+
+.vvtech-ai-suggestions button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0,194,204,.52);
+  background: rgba(0,194,204,.1);
+}
+
+.vvtech-ai-typing {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 29px;
+  padding: 0 15px 8px;
+  color: rgba(255,255,255,.48);
+  font-size: 10px;
+}
+
+.vvtech-ai-typing span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: vvtechAiTyping 1.2s infinite ease-in-out;
+}
+
+.vvtech-ai-typing span:nth-child(2) { animation-delay: .15s; }
+.vvtech-ai-typing span:nth-child(3) { animation-delay: .3s; }
+
+.vvtech-ai-typing em {
+  margin-left: 4px;
+  font-style: normal;
+}
+
+.vvtech-ai-input-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(255,255,255,.07);
+  background: rgba(0,0,0,.16);
+}
+
+#vvtech-ai-input {
+  flex: 1;
+  min-height: 43px;
+  max-height: 110px;
+  resize: none;
+  padding: 11px 12px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 10px;
+  outline: none;
+  color: #fff;
+  background: rgba(255,255,255,.055);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+#vvtech-ai-input::placeholder {
+  color: rgba(255,255,255,.38);
+}
+
+#vvtech-ai-input:focus {
+  border-color: rgba(0,194,204,.55);
+  box-shadow: 0 0 0 3px rgba(0,194,204,.07);
+}
+
+#vvtech-ai-send {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  color: #04131d;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  cursor: pointer;
+  transition: .18s ease;
+}
+
+#vvtech-ai-send:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(0,194,204,.2);
+}
+
+#vvtech-ai-send:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.vvtech-ai-footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 12px 8px;
+  color: rgba(255,255,255,.32);
+  font-size: 8px;
+  border-top: 1px solid rgba(255,255,255,.045);
+}
+
+@keyframes vvtechAiBlink {
+  0%, 100% { opacity: .55; transform: scale(.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes vvtechAiOpen {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes vvtechAiMessage {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vvtechAiTyping {
+  0%, 60%, 100% { opacity: .3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (max-width: 600px) {
+  #vvtech-ai-widget {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  #vvtech-ai-launcher {
+    min-height: 50px;
+    padding-right: 12px;
+  }
+
+  .vvtech-ai-panel {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 76px;
+    width: auto;
+    height: min(620px, calc(100vh - 95px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #vvtech-ai-panel,
+  .vvtech-ai-message,
+  .vvtech-ai-online-dot,
+  .vvtech-ai-typing span {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   VVTECH AI ASSISTANT — V2 UI / FUNCTIONALITY OVERRIDES
+   ========================================================= */
+
+/* Critical: the HTML hidden attribute must actually hide the panel. */
+#vvtech-ai-panel[hidden] {
+  display: none !important;
+}
+
+/* Cleaner floating launcher */
+#vvtech-ai-widget {
+  right: 35px;
+  bottom: 90px;
+  z-index: 2147483000;
+}
+
+#vvtech-ai-launcher {
+  position: relative;
+  min-height: 54px;
+  padding: 6px 15px 6px 7px;
+  gap: 9px;
+  border: 1px solid rgba(88, 226, 222, .34);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #071a29 0%, #083543 100%);
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, .38),
+    0 0 0 1px rgba(255,255,255,.035) inset,
+    0 0 28px rgba(0, 190, 205, .10);
+}
+
+#vvtech-ai-launcher::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(0,194,204,.28), transparent 40%, rgba(140,198,63,.16));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  padding: 1px;
+}
+
+.vvtech-ai-launcher-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 13px;
+}
+
+.vvtech-ai-launcher-text {
+  font-size: 12px;
+  letter-spacing: .02em;
+}
+
+.vvtech-ai-online-dot {
+  margin-left: 1px;
+}
+
+/* Modern compact desktop panel */
+.vvtech-ai-panel {
+  right: 0;
+  bottom: 68px;
+  width: 390px;
+  height: min(590px, calc(100vh - 105px));
+  min-height: 420px;
+  border: 1px solid rgba(102, 231, 230, .22);
+  border-radius: 22px;
+  background:
+    radial-gradient(500px 240px at 100% -5%, rgba(0, 194, 204, .15), transparent 58%),
+    radial-gradient(420px 220px at 0% 100%, rgba(140, 198, 63, .07), transparent 60%),
+    #06121e;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.025) inset,
+    0 0 42px rgba(0,194,204,.10);
+}
+
+/* Header */
+.vvtech-ai-header {
+  min-height: 68px;
+  padding: 10px 12px 10px 14px;
+  background: linear-gradient(180deg, rgba(12, 46, 58, .94), rgba(6, 26, 37, .88));
+}
+
+.vvtech-ai-brand {
+  gap: 10px;
+}
+
+.vvtech-ai-brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+}
+
+.vvtech-ai-brand strong {
+  font-size: 13px;
+  letter-spacing: -.01em;
+}
+
+.vvtech-ai-brand small {
+  font-size: 9px;
+  color: rgba(215,239,243,.56);
+}
+
+#vvtech-ai-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  font-size: 21px;
+  color: rgba(255,255,255,.7);
+}
+
+/* Conversation area */
+.vvtech-ai-messages {
+  padding: 15px 14px 12px;
+}
+
+.vvtech-ai-message {
+  max-width: 90%;
+  margin-bottom: 10px;
+  padding: 11px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  line-height: 1.52;
+}
+
+.vvtech-ai-bot {
+  border-color: rgba(120, 206, 218, .10);
+  background: linear-gradient(145deg, rgba(23, 47, 61, .92), rgba(12, 31, 43, .94));
+}
+
+.vvtech-ai-user {
+  background: linear-gradient(135deg, #078a96, #087b76);
+  border-color: rgba(88, 226, 222, .20);
+}
+
+.vvtech-ai-message-label {
+  margin-bottom: 4px;
+  font-size: 8px;
+}
+
+/* Quick prompts */
+.vvtech-ai-suggestions {
+  gap: 6px;
+  margin: 5px 0 12px;
+}
+
+.vvtech-ai-suggestions button {
+  padding: 7px 9px;
+  border-radius: 999px;
+  color: #a7ecee;
+  background: rgba(0,194,204,.055);
+  border-color: rgba(0,194,204,.20);
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.vvtech-ai-suggestions button:hover {
+  background: rgba(0,194,204,.13);
+}
+
+/* Typing indicator */
+.vvtech-ai-typing {
+  min-height: 26px;
+  padding: 0 14px 7px;
+}
+
+/* Input area */
+.vvtech-ai-input-wrap {
+  gap: 7px;
+  padding: 9px;
+  background: rgba(3, 13, 22, .72);
+}
+
+#vvtech-ai-input {
+  min-height: 42px;
+  padding: 10px 11px;
+  border-radius: 11px;
+  font-size: 11px;
+  background: rgba(255,255,255,.045);
+}
+
+#vvtech-ai-send {
+  width: 42px;
+  height: 42px;
+  flex-basis: 42px;
+  border-radius: 11px;
+}
+
+/* Footer */
+.vvtech-ai-footer {
+  padding: 6px 11px 8px;
+  font-size: 7.5px;
+  color: rgba(255,255,255,.3);
+}
+
+/* Desktop: keep the widget clear of the site footer */
+@media (min-width: 601px) {
+  #vvtech-ai-launcher {
+    min-width: 152px;
+    justify-content: flex-start;
+  }
+}
+
+/* Tablet */
+@media (max-width: 760px) {
+  #vvtech-ai-widget {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .vvtech-ai-panel {
+    width: min(390px, calc(100vw - 28px));
+    height: min(610px, calc(100vh - 92px));
+  }
+}
+
+/* Mobile: bottom-sheet style, without covering the whole page */
+@media (max-width: 600px) {
+  #vvtech-ai-widget {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  #vvtech-ai-launcher {
+    min-height: 50px;
+    border-radius: 17px;
+    padding-right: 12px;
+  }
+
+  .vvtech-ai-launcher-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .vvtech-ai-panel {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 72px;
+    width: auto;
+    height: min(570px, calc(100vh - 92px));
+    min-height: 390px;
+    border-radius: 20px;
+  }
+
+  .vvtech-ai-header {
+    min-height: 64px;
+  }
+
+  .vvtech-ai-messages {
+    padding: 12px 11px 9px;
+  }
+
+  .vvtech-ai-message {
+    max-width: 92%;
+    font-size: 11.5px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+  #vvtech-ai-launcher-text {
+    display: none;
+  }
+
+  #vvtech-ai-launcher {
+    min-width: 52px;
+    width: 52px;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .vvtech-ai-online-dot {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #071a29;
+  }
+
+  .vvtech-ai-panel {
+    left: 7px;
+    right: 7px;
+    bottom: 68px;
+    height: calc(100vh - 82px);
+    max-height: 570px;
+    border-radius: 18px;
+  }
+}
+
+/* Accessibility */
+#vvtech-ai-launcher:focus-visible,
+#vvtech-ai-close:focus-visible,
+#vvtech-ai-send:focus-visible,
+.vvtech-ai-suggestions button:focus-visible,
+#vvtech-ai-input:focus-visible {
+  outline: 2px solid #63e5e5;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   VVTECH COMPANY SOCIAL PROFILES
+   Placeholder URLs can be replaced with the real profiles.
+   ========================================================= */
+
+.vv-contact-panel .vvtech-social-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 28px;
+  padding: 0;
+  border-top: 0;
+  background: transparent;
+}
+
+.vv-contact-panel .vvtech-social-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(98, 217, 225, .14);
+  border-radius: 13px;
+  text-decoration: none;
+  color: #e9fbfc;
+  background: linear-gradient(135deg, rgba(2,20,32,.74), rgba(5,34,47,.52));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.vv-contact-panel .vvtech-social-link:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(4,30,43,.9), rgba(7,54,66,.68));
+  border-color: rgba(98, 217, 225, .38);
+  box-shadow: 0 10px 24px rgba(0,0,0,.20), 0 0 18px rgba(0,205,220,.08);
+}
+
+.vv-contact-panel .vvtech-social-icon {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #67e4ea;
+  background: rgba(0,194,204,.08);
+  border: 1px solid rgba(0,194,204,.20);
+}
+
+.vv-contact-panel .vvtech-social-icon svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  fill: currentColor;
+}
+
+.vv-contact-panel .vvtech-social-link.instagram .vvtech-social-icon svg {
+  fill: none;
+}
+
+.vv-contact-panel .vvtech-social-link.instagram .vvtech-social-icon svg circle:last-child {
+  fill: currentColor;
+}
+
+.vv-contact-panel .vvtech-social-link.facebook .vvtech-social-icon {
+  color: #78aaff;
+  background: rgba(66,103,178,.10);
+  border-color: rgba(66,103,178,.22);
+}
+
+.vv-contact-panel .vvtech-social-link.instagram .vvtech-social-icon {
+  color: #ee9bda;
+  background: rgba(220,85,170,.09);
+  border-color: rgba(220,85,170,.22);
+}
+
+.vv-contact-panel .vvtech-social-link.linkedin .vvtech-social-icon {
+  color: #68dfea;
+}
+
+.vv-contact-panel .vvtech-social-link > span:nth-child(2) {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.vv-contact-panel .vvtech-social-link strong {
+  font-size: 11px;
+  line-height: 1.15;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.vv-contact-panel .vvtech-social-link small {
+  font-size: 8px;
+  line-height: 1.15;
+  color: rgba(220,245,247,.46);
+  white-space: nowrap;
+}
+
+.vv-contact-panel .vvtech-social-arrow {
+  margin-left: auto;
+  font-size: 13px;
+  color: rgba(220,245,247,.34);
+  transition: color .2s ease, transform .2s ease;
+  display: none !important;
+}
+
+.vv-contact-panel .vvtech-social-link:hover .vvtech-social-arrow {
+  color: #70e8eb;
+  transform: translate(1px,-1px);
+}
+
+@media (max-width: 900px) {
+  .vv-contact-panel .vvtech-social-links {
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .vv-contact-panel .vvtech-social-link {
+    padding: 9px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vv-contact-panel .vvtech-social-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .vv-contact-panel .vvtech-social-link {
+    justify-content: center;
+    padding: 8px 6px;
+  }
+
+  .vv-contact-panel .vvtech-social-icon {
+    flex-basis: 31px;
+    width: 31px;
+    height: 31px;
+  }
+
+  .vv-contact-panel .vvtech-social-link > span:nth-child(2) {
+    display: none;
+  }
+
+  .vv-contact-panel .vvtech-social-arrow {
+    display: none;
   }
 }
