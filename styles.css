@@ -2282,7 +2282,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 730; }
    ========================================================= */
 
 .vv-approach-container {
-  width: min(100%, 1500px);
+  /*width: min(100%, 1500px);*/
   margin-inline: auto;
 }
 
