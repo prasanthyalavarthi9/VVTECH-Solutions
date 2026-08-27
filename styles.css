@@ -6269,7 +6269,8 @@ max-width: 9000px !important;
 }
 
 #contact .vv-info-text span{
-  font-size:12px !important;
+  font-size: 14px !important;
+  font-weight: bold;
 }
 
 #contact .vv-info-arrow{
