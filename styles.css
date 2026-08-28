@@ -4140,7 +4140,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 730; }
 }
 
 #contact .vv-contact-wave .wave {
-  position: absolute;
+  #position: absolute;
   left: -8%;
   width: 116%;
   height: 110px;
@@ -6324,7 +6324,7 @@ max-width: 9000px !important;
   height:420px !important;
   left:41% !important;
   top:52% !important;
-  opacity:.25 !important;
+  opacity:.6 !important;
   z-index:1 !important;
   animation:vvContactGlobeRotate 34s linear infinite !important;
 }
@@ -6340,11 +6340,9 @@ max-width: 9000px !important;
 }
 
 #contact .vv-contact-wave{
-height: 80px !important;
+  height: 80px !important;
   opacity: .55 !important;
-  width: 17000px;
-}
-}
+  width: 100%;
 }
 
 /* Keep the outer contact frame clean */
@@ -6364,7 +6362,7 @@ height: 80px !important;
     max-width:780px !important;
   }
   #contact .vv-network-globe{
-    width:600px !important;
+    width:45% !important;
     height:550px !important;
     left:41% !important;
   }
@@ -7270,5 +7268,499 @@ height: 80px !important;
 
   .vv-contact-panel .vvtech-social-arrow {
     display: none;
+  }
+}
+
+
+/* =========================================================
+   VVTECH RESPONSIVE STABILITY PATCH — 2026-08-28
+   Preserves the existing visual design while preventing
+   horizontal overflow, rigid mobile sizing and viewport issues.
+   ========================================================= */
+
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Move Hero Card styling out of index.html and make its width fluid. */
+.hero-card {
+  width: min(400px, 100%);
+  max-width: 400px;
+  min-height: 350px;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.08);
+  -webkit-backdrop-filter: blur(18px);
+  /*backdrop-filter: blur(18px);*/
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 25px 60px rgba(0,0,0,.45), 0 0 30px rgba(0,194,204,.12);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px rgba(0,0,0,.55), 0 0 35px rgba(0,194,204,.28);
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 4px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(0,194,204,.8), rgba(245,123,32,.6));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.card-header > span {
+  color: #f6b727;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.hero-card-title {
+  margin: 0;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 800;
+}
+
+.card-line {
+  width: 70px;
+  height: 4px;
+  margin: 28px 0;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00c2cc, #8cc63f);
+}
+
+.card-features {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.feature {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 10px;
+  transition: transform .3s ease;
+}
+
+.feature:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.feature h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.feature p {
+  margin: 7px 0 0;
+  color: rgba(255,255,255,.68);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.hero-card-inline-icon {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card-header .hero-card-inline-icon { flex: 0 0 auto; margin: 0; }
+.feature .hero-card-inline-icon { display: block; margin: 0 auto 12px; }
+.hero-card-inline-icon--header { color: #f6b727; }
+.hero-card-inline-icon--shield { color: #00c2cc; }
+.hero-card-inline-icon--growth { color: #8cc63f; }
+.hero-card-inline-icon--support { color: #f57b20; }
+
+/* Mobile navigation: prevent the document from moving behind the menu. */
+body.nav-open { overflow: hidden; }
+
+/* Modern mobile viewport units prevent browser chrome from creating a
+   falsely tall/short hero. */
+@media (max-width: 1100px) {
+  .hero {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    inset: max(10px, env(safe-area-inset-top)) 12px auto;
+    width: auto;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .brand-title {
+    min-width: 0;
+  }
+
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    padding: 126px 18px 48px;
+    align-items: start;
+  }
+
+  .hero-content {
+    min-width: 0;
+  }
+
+  .hero-content p:not(.eyebrow) {
+    font-size: clamp(16px, 4.1vw, 18px);
+  }
+
+  h1 {
+    font-size: clamp(34px, 9vw, 45px);
+    line-height: 1.02;
+  }
+
+  .hero-actions .btn {
+    min-height: 48px;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .card-features {
+    gap: 4px;
+  }
+
+  .feature {
+    padding: 8px 5px;
+  }
+
+  .feature h4 {
+    font-size: 14px;
+  }
+
+  .feature p {
+    font-size: 11px;
+  }
+
+  .site-nav {
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .service-showcase,
+  .service-stage,
+  .vv-approach-panel,
+  .vv-approach-content,
+  .contact-box {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .service-panel h3 {
+    font-size: clamp(30px, 8.5vw, 34px);
+  }
+
+  .service-panel > p {
+    font-size: 16px;
+  }
+
+  .service-panel ul {
+    grid-template-columns: 1fr;
+  }
+
+  .service-panel li {
+    min-width: 0;
+  }
+
+  /* The wheel keeps its existing composition but scales down cleanly. */
+  .solution-wheel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .wheel-card {
+    max-width: 42vw;
+  }
+
+  /* Contact: allow content height to determine the section on phones. */
+  #contact .vv-contact-section {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    padding: 30px 16px 36px !important;
+  }
+
+  #contact .vv-contact-left,
+  #contact .vv-contact-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #contact .vv-contact-title {
+    font-size: clamp(34px, 10vw, 42px) !important;
+    line-height: 1.04 !important;
+  }
+
+  #contact .vv-contact-description {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  #contact .vv-feature-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  #contact .vv-contact-panel {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  #contact .vv-network-globe {
+    width: min(280px, 72vw) !important;
+    height: min(280px, 72vw) !important;
+    left: 50% !important;
+    top: 27% !important;
+    opacity: .13 !important;
+  }
+
+  #contact .vv-contact-wave {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* AI chat: use dynamic viewport height and safe areas. */
+  #vvtech-ai-widget {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .vvtech-ai-panel {
+    height: min(570px, calc(100dvh - 92px));
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-slider,
+  .infra-map {
+    min-height: 400px;
+  }
+
+  .vv-approach-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .vv-stage-navigation {
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .vv-stage {
+    flex-basis: 96px;
+  }
+
+  .vv-slide-content h3 {
+    font-size: clamp(24px, 7.2vw, 29px);
+  }
+
+  .vv-feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .solution-wheel {
+    min-height: 620px;
+  }
+
+  .wheel-core {
+    width: 96px;
+    height: 96px;
+    font-size: 18px;
+  }
+
+  .wheel-card {
+    width: 126px;
+    min-height: 82px;
+    padding: 10px 8px;
+  }
+
+  .wheel-card strong {
+    font-size: 13px;
+  }
+
+  #contact .vv-info-item {
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+  }
+
+  #contact .vv-info-arrow {
+    display: none !important;
+  }
+
+  .vvtech-ai-panel {
+    left: 8px;
+    right: 8px;
+    bottom: 70px;
+    width: auto;
+    height: min(570px, calc(100dvh - 86px));
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .hero {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-card {
+    padding: 18px;
+  }
+
+  .hero-card-title {
+    font-size: 24px;
+  }
+
+  .card-header > span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .card-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .feature:not(:last-child) {
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .feature h4 {
+    font-size: 12px;
+  }
+
+  .feature p {
+    font-size: 10px;
+  }
+
+  .solution-wheel {
+    min-height: 590px;
+  }
+
+  .wheel-card {
+    width: 112px;
+    min-height: 76px;
+  }
+
+  .wheel-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  #contact .vv-contact-title {
+    font-size: 34px !important;
+  }
+
+  #contact .vv-panel-ribbon {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+  }
+
+  .vvtech-ai-panel {
+    left: 6px;
+    right: 6px;
+    bottom: 66px;
+    height: calc(100dvh - 80px);
+    max-height: 570px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hero-card:hover,
+  .why-card:hover,
+  .service-tab:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card,
+  .hero-card:hover,
+  .service-tab,
+  .why-card {
+    transition: none !important;
   }
 }
